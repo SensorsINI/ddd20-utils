@@ -167,10 +167,18 @@ if __name__ == '__main__':
         aer.get()
         vi.get()
 
+
+    # wait for keyboard input
+    import thread
+    def input_thread(list):
+        raw_input()
+        list.append(None)
+
     #start recording
-    alive = True
+    raw_inp = []
     viewer.set_fps(10)
-    while alive:
+    thread.start_new_thread(input_thread, (raw_inp,))
+    while not raw_inp:
         try:
             # get aer data
             res = aer.get()
@@ -187,7 +195,13 @@ if __name__ == '__main__':
                 viewer.show(res)
             stats.report()
         except KeyboardInterrupt:
-            alive = False
             print '\nexiting...'
+            dataset.exit.set()
             viewer.close()
+
+        dataset.exit.set()
+        aer.exit.set()
+        vi.exit.set()
+        viewer.close()
+
 
