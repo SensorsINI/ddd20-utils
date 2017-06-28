@@ -103,6 +103,8 @@ def save_aer(ds, data):
 
 def save_vi(ds, data):
     ''' send vi data dict to dataset buffer '''
+    if data['name'] not in dtypes_vi:
+        return
     conv = conversions_vi.get(data['name'], False)
     val = conv(data['value']) if conv else data['value']
     ds.save({
