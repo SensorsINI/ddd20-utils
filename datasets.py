@@ -45,6 +45,9 @@ class HDF5(mp.Process):
                 self._save(res)
             except Queue.Empty:
                 pass
+            except IOError:
+                print('IOError, continuing')
+                pass
             except KeyboardInterrupt:
 #                print('datasets.run got interrupt')
                 self.exit.set()

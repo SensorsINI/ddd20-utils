@@ -50,6 +50,7 @@ dtypes_vi = {
         'steering_wheel_angle': float,
         'torque_at_transmission': float,
         'transmission_gear_position': datasets.h5py.special_dtype(vlen=unicode),
+        'gear_lever_position': datasets.h5py.special_dtype(vlen=unicode),
         #'turn_signal_status': datasets.h5py.special_dtype(vlen=unicode),
         'vehicle_speed': float,
         'windshield_wiper_status': bool,
@@ -72,6 +73,7 @@ gear_position = {
         'seventh': 7,
         'eighth': 8,
         'neutral': 0,
+        'nuetral': 0,
         'reverse': -1,
         'park': -2
         }
@@ -84,6 +86,7 @@ conversions_vi = {
         'windshield_wiper_status': float,
         'ignition_status': lambda v: ignition_status.get(v),
         'transmission_gear_position': lambda v: gear_position.get(v),
+        'gear_lever_position': lambda v: gear_position.get(v),
         }
 
 # -- end of config --
@@ -104,13 +107,14 @@ def save_aer(ds, data):
 def save_vi(ds, data):
     ''' send vi data dict to dataset buffer '''
     if data['name'] not in dtypes_vi:
-        return
+        return False
     conv = conversions_vi.get(data['name'], False)
     val = conv(data['value']) if conv else data['value']
     ds.save({
         data['name'] + '_data': [data['timestamp'], val],
         data['name'] + '_timestamp': data['timestamp']
     })
+    return True
 
 def get_filename():
     ''' generate file name of the recording file '''
@@ -191,9 +195,9 @@ if __name__ == '__main__':
             # get vi data
             res = vi.get()
             if res:
-                save_vi(dataset, res)
-                count_vi[res['name']] += 1
-                viewer.show(res)
+                if save_vi(dataset, res):
+                  count_vi[res['name']] += 1
+                  viewer.show(res)
             stats.report()
         except KeyboardInterrupt:
             print '\ninterrupt, exiting...'
