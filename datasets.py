@@ -46,6 +46,7 @@ class HDF5(mp.Process):
             except Queue.Empty:
                 pass
             except KeyboardInterrupt:
+#                print('datasets.run got interrupt')
                 self.exit.set()
         self.close()
 
@@ -110,5 +111,5 @@ class HDF5(mp.Process):
         self.f.close()
         self.q.close()
         self.q.join_thread()
-        print('closed output file')
+        print('\nclosed output file')
 

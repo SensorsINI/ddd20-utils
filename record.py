@@ -134,13 +134,12 @@ if __name__ == '__main__':
     aer = interfaces.caer.Monitor(bufsize=BUFSIZE_AER)
     vi = interfaces.openxc.Monitor(bufsize=BUFSIZE_OXC)
     exposure = interfaces.caer.ExposureCtl()
-
     # flush buffers
     t = time.time()
     while time.time() - t < 1:
         aer.get()
         vi.get()
-
+    
     # pre-recording loop
     viewer = Viewer(zoom=1.41)
     inp_detect = []
@@ -171,16 +170,16 @@ if __name__ == '__main__':
 
 
     # wait for keyboard input
-    import thread
-    def input_thread(list):
-        raw_input()
+    def end_thread(list):
+        raw_input('hit enter to end recording...')
         list.append(None)
 
     #start recording
     raw_inp = []
-    viewer.set_fps(10)
-    thread.start_new_thread(input_thread, (raw_inp,))
+    viewer.set_fps(5)
+    thread.start_new_thread(end_thread, (raw_inp,))
     while not raw_inp:
+#    while not dataset.exit.is_set():
         try:
             # get aer data
             res = aer.get()
@@ -197,13 +196,14 @@ if __name__ == '__main__':
                 viewer.show(res)
             stats.report()
         except KeyboardInterrupt:
-            print '\nexiting...'
+            print '\ninterrupt, exiting...'
             dataset.exit.set()
             viewer.close()
 
-        dataset.exit.set()
-        aer.exit.set()
-        vi.exit.set()
-        viewer.close()
+    print '\nexiting...'
+    dataset.exit.set()
+    aer.exit.set()
+    vi.exit.set()
+    viewer.close()
 
 
