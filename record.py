@@ -203,6 +203,9 @@ if __name__ == '__main__':
             print '\ninterrupt, exiting...'
             dataset.exit.set()
             viewer.close()
+        except Queue.Full:
+            print('queue full, ignoring')
+            pass
 
     print '\nexiting...'
     dataset.exit.set()
