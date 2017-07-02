@@ -62,8 +62,13 @@ ignition_status = {
         'run': 2,
         'start': 3
         }
+        
+# gear_lever_position, it actually can have more values than transmission_gear_position according to specs: 
+        #neutral, park, reverse, drive, sport, low, first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth
 
 gear_position = {
+        'neutral': 0,
+        'nuetral': 0, # misspelled in ford VI version 4 firmware
         'first': 1,
         'second': 2,
         'third': 3,
@@ -72,12 +77,15 @@ gear_position = {
         'sixth': 6,
         'seventh': 7,
         'eighth': 8,
-        'neutral': 0,
-        'nuetral': 0,
+        'ninth': 9,
+        'tenth': 10,
+        'drive': 3,
+        'sport': 2,
+        'low': 1,
         'reverse': -1,
         'park': -2,
-        'none': 0 # tobi/georgios added after observing this value every 15m or so on ford focus
         }
+        
 
 conversions_vi = {
         'brake_pedal_status': float,
@@ -87,7 +95,7 @@ conversions_vi = {
         'windshield_wiper_status': float,
         'ignition_status': lambda v: ignition_status.get(v),
         'transmission_gear_position': lambda v: gear_position.get(v),
-        'gear_lever_position': lambda v: gear_position.get(v),
+        'gear_lever_position': lambda v: gear_position.get(v,99), # added defauult of 99 for unknown values rather than None
         }
 
 # -- end of config --
