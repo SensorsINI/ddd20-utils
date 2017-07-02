@@ -75,7 +75,8 @@ gear_position = {
         'neutral': 0,
         'nuetral': 0,
         'reverse': -1,
-        'park': -2
+        'park': -2,
+        'none': 0 # tobi/georgios added after observing this value every 15m or so on ford focus
         }
 
 conversions_vi = {

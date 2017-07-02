@@ -39,14 +39,17 @@ class HDF5(mp.Process):
 
     def run(self):
         self.init_ds()
+        f = file("error_get.dat", "wa")
         while not self.exit.is_set() or not self.q.empty():
             try:
                 res = self.q.get(False, 1e-3)
                 self._save(res)
-            except Queue.Empty:
+	    except Queue.Empty:
                 pass
             except IOError:
                 print('IOError, continuing')
+		f.write(str(res))
+		f.close()
                 pass
             except KeyboardInterrupt:
 #                print('datasets.run got interrupt')
