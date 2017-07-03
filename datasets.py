@@ -39,21 +39,21 @@ class HDF5(mp.Process):
 
     def run(self):
         self.init_ds()
-        f = file("error_get.dat", "wa")
+        f = file('datasets_ioerrors.txt', 'a')
         while not self.exit.is_set() or not self.q.empty():
             try:
                 res = self.q.get(False, 1e-3)
                 self._save(res)
-	    except Queue.Empty:
+            except Queue.Empty:
                 pass
             except IOError:
                 print('IOError, continuing')
-		f.write(str(res))
-		f.close()
+                f.write(str(res))
                 pass
             except KeyboardInterrupt:
 #                print('datasets.run got interrupt')
                 self.exit.set()
+        f.close()
         self.close()
 
     def create_datasets(self, tables, compression=None):

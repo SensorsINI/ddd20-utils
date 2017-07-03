@@ -272,6 +272,12 @@ class ExposureCtl(Controller):
     * target -- target average pixel value (between 0 and 255)
     * cutoff_top -- number of pixels at the top of image to be ignored
     * cutoff_bot -- number of pixels at the bottom of image to be ignored
+    
+    We generally want to expose for road which is bottom of image. Therefore the default
+    is to ignore the top 100 pixels (cutoff_top) and to ignore the bottom 50 (cutoff_bot) 
+    which might be the hood. 
+    Howvever, if sensor is mounted upside down, then we should ignore a lot of the bottom
+    (sky) and maybe a bit of the top (hood).
     '''
     def __init__(self, fps=5, target=100, cutoff_top=100, cutoff_bot=50):
         super(ExposureCtl, self).__init__()
@@ -302,7 +308,7 @@ class ExposureCtl(Controller):
 if __name__ == '__main__':
 
     aer = Monitor()
-    exposure = ExposureCtl()
+    exposure = ExposureCtl(cutoff_bot=150, cutoff_top=10) # set for upside down camera where sky will be at bottom
     while True:
         packet = aer.get()
         if not packet:
