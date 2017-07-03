@@ -4,8 +4,8 @@ import h5py, lasagne, theano
 import numpy as np
 import theano.tensor as T
 from collections import defaultdict
-from hdf5_deeplearn_utils import HDF5VisualIterator
-from lasagne_utils import get_layer_output_fn, store_in_log, save_model, load_log, load_model
+from hdf5_deeplearn_utils import MultiHDF5SeqVisualIterator
+from lasagne_utils import get_layer_output_fn, store_in_log, save_model, load_log, load_model, ftensor5, non_flattening_dense
 
 def replace_updates_nans_with_zero(updates):
     import theano.tensor as T
@@ -34,8 +34,8 @@ def print_model_with_data(model, data):
 def get_train_and_test_fn(inputs, target_var, network):
     train_prediction = lasagne.layers.get_output(network)
     # Say correct if it is within 45 degrees
-    train_correctness = T.abs_(train_prediction-target_var) < 20
-    train_loss = lasagne.objectives.squared_error(train_prediction, target_var).mean()
+    train_correctness = T.abs_(train_prediction.flatten()-target_var.flatten()) < 10
+    train_loss = lasagne.objectives.squared_error(train_prediction.flatten(), target_var.flatten()).mean()
     train_acc = T.mean(train_correctness)
 
     # Get trainable parameters, and calculate adam updates
@@ -43,8 +43,8 @@ def get_train_and_test_fn(inputs, target_var, network):
     updates = replace_updates_nans_with_zero(lasagne.updates.adam(train_loss, params, learning_rate=1e-3))
     # Get test prediction
     test_prediction = lasagne.layers.get_output(network, deterministic=True)
-    test_correctness = T.abs_(test_prediction-target_var) < 20
-    test_loss = lasagne.objectives.squared_error(train_prediction, target_var).mean()
+    test_correctness = T.abs_(test_prediction.flatten()-target_var.flatten()) < 10
+    test_loss = lasagne.objectives.squared_error(train_prediction.flatten(), target_var.flatten()).mean()
     test_acc = T.mean(test_correctness)
 
     # Compile the functions
@@ -54,42 +54,66 @@ def get_train_and_test_fn(inputs, target_var, network):
 
     return train_fn, test_fn
 
-def get_simple_driving_cnn(vid_in, dims=(60, 80), dense_sizes=[64, 64]):
+def get_simple_driving_rnn(vid_in, dims=(60, 80), dense_sizes=[64]):
     # INPUTS
     #   (batch size, max sequence length, channels, rows, cols)
-    l_vid_in = lasagne.layers.InputLayer(shape=(None, 1)+dims, input_var=vid_in)
-    batch_size = vid_in.shape[0]
+    l_vid_in = lasagne.layers.InputLayer(shape=(None, None, 1)+dims, input_var=vid_in)
+    batch_size, vid_time_length = vid_in.shape[0], vid_in.shape[1]
+    # Flatten together batches and sequences
+    #    First reverse it so that the flatten dims are at the end
+    dimshuffle_vid_in = lasagne.layers.DimshuffleLayer(l_vid_in, (4,3,2,1,0))
+    #    Now flatten it: (48 x 48 x 1 x seq_len x batch_size) => (48 x 48 x 3 x seq_len*batch_size)
+    flatten_vid = lasagne.layers.FlattenLayer(dimshuffle_vid_in, outdim=4)
+    #    Now unreverse it: (seq_len*batch_size x 1 x 48 x 48)
+    reshape_vid_in = lasagne.layers.DimshuffleLayer(flatten_vid, (3,2,1,0))
 
-    # Simple ConvNet
-    l_cnn = lasagne.layers.Conv2DLayer(l_vid_in,
-                                        num_filters=8, filter_size=(3, 3),
-                                        nonlinearity=lasagne.nonlinearities.leaky_rectify)
-    l_cnn = lasagne.layers.MaxPool2DLayer(l_cnn, pool_size=(2, 2))
-    l_cnn = lasagne.layers.Conv2DLayer(l_cnn,
-                                       num_filters=8, filter_size=(3, 3),
-                                       nonlinearity=lasagne.nonlinearities.leaky_rectify)
-    l_cnn = lasagne.layers.MaxPool2DLayer(l_cnn, pool_size=(2, 2))
-    l_cnn = lasagne.layers.Conv2DLayer(l_cnn,
-                                       num_filters=8, filter_size=(3, 3),
-                                       nonlinearity=lasagne.nonlinearities.leaky_rectify)
-    l_cnn = lasagne.layers.MaxPool2DLayer(l_cnn, pool_size=(2, 2))
-    l_cnn = lasagne.layers.Conv2DLayer(l_cnn,
-                                       num_filters=8, filter_size=(3, 3),
-                                       nonlinearity=lasagne.nonlinearities.leaky_rectify)
+    # VIDEO CONVNET BRANCH
+    # Another convolution with 8 5x5 kernels, and another 2x2 pooling:
+    vid_conv_1 = lasagne.layers.Conv2DLayer(reshape_vid_in,
+                                            num_filters=8, filter_size=(3, 3),
+                                            nonlinearity=lasagne.nonlinearities.leaky_rectify)
+    vid_maxpool_1 = lasagne.layers.MaxPool2DLayer(vid_conv_1, pool_size=(2, 2))
+    vid_conv_2 = lasagne.layers.Conv2DLayer(vid_maxpool_1,
+                                            num_filters=8, filter_size=(3, 3),
+                                            nonlinearity=lasagne.nonlinearities.leaky_rectify)
+    vid_maxpool_2 = lasagne.layers.MaxPool2DLayer(vid_conv_2, pool_size=(2, 2))
+    vid_conv_3 = lasagne.layers.Conv2DLayer(vid_maxpool_2,
+                                            num_filters=8, filter_size=(3, 3),
+                                            nonlinearity=lasagne.nonlinearities.leaky_rectify)
+    vid_maxpool_3 = lasagne.layers.MaxPool2DLayer(vid_conv_3, pool_size=(2, 2))
+    vid_conv_4 = lasagne.layers.Conv2DLayer(vid_maxpool_3,
+                                            num_filters=8, filter_size=(3, 3),
+                                            nonlinearity=lasagne.nonlinearities.leaky_rectify)
+    vid_maxpool_4 = lasagne.layers.MaxPool2DLayer(vid_conv_4, pool_size=(2, 2))
+    # Now we want to break the timesteps back out
+    #   First reverse:
+    vid_final_dimshuffle = lasagne.layers.DimshuffleLayer(vid_maxpool_4, (3,2,1,0))
+    #   Then pull out the timesteps:
+    vid_final_reshape = lasagne.layers.ReshapeLayer(vid_final_dimshuffle, ([0], [1], [2], vid_time_length, batch_size))
+    #   Then unreverse:
+    vid_final_reorder = lasagne.layers.DimshuffleLayer(vid_final_reshape, (4,3,2,1,0))
+    #   Then flatten the image dimensions to a vector:
+    vid_final = lasagne.layers.FlattenLayer(vid_final_reorder, outdim=3)
+
+    # VIDEO RNN
+    vid_lstm = lasagne.layers.GRULayer(vid_final, num_units=80)
+
+    l_dense = vid_lstm
+
     # Dense layers
     for dense_size in dense_sizes:
-        l_cnn = lasagne.layers.DenseLayer(l_cnn, num_units=dense_size,
-            nonlinearity=lasagne.nonlinearities.leaky_rectify)
+        l_dense = non_flattening_dense(l_dense, batch_size, vid_time_length, num_units=dense_size, nonlinearity=lasagne.nonlinearities.leaky_rectify)
 
-    l_cnn = lasagne.layers.DenseLayer(l_cnn, num_units=1, nonlinearity=None)
-    return l_cnn
+    l_out = non_flattening_dense(l_dense, batch_size, vid_time_length, num_units=1, nonlinearity=None)
+    return l_out
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Train a driving network.')
     # File and path naming stuff
-    parser.add_argument('--h5file',       default='/home/dneil/h5fs/driving/rec1487864316_bin5k.hdf5', help='HDF5 File that has the data.')
+    parser.add_argument('--h5files',    nargs='+', default='/home/dneil/h5fs/driving/rec1487864316_bin5k.hdf5', help='HDF5 File that has the data.')
     parser.add_argument('--run_id',       default='default', help='ID of the run, used in saving.')
-    parser.add_argument('--filename',     default='driving_cnn_19.4', help='Filename to save model and log to.')
+    parser.add_argument('--filename',     default='driving_rnn_10.6_multi', help='Filename to save model and log to.')
     parser.add_argument('--resume',       default=None, help='Filename to load model and log from.')
     # Control meta parameters
     parser.add_argument('--seed',         default=42, type=int, help='Initialize the random seed of the run (for reproducibility).')
@@ -98,7 +122,7 @@ if __name__ == '__main__':
     parser.add_argument('--patience',     default=4, type=int, help='How long to wait for an increase in validation error before quitting.')
     parser.add_argument('--patience_key', default='test_acc', help='What key to look at before quitting.')
     parser.add_argument('--wait_period',  default=10, type=int, help='How long to wait before looking for early stopping.')
-    parser.add_argument('--dataset_key',  default='aps_frame_48x64', help='Which dataset key (APS, DVS, etc.) to use.')
+    parser.add_argument('--dataset_keys',  nargs='+', default='aps_frame_48x64', help='Which dataset key (APS, DVS, etc.) to use.')
     args = parser.parse_args()
 
     # Set seed
@@ -108,16 +132,16 @@ if __name__ == '__main__':
     comb_filename = '_'.join([args.filename, args.run_id])
 
     # Load dataset
-    h5f = h5py.File(args.h5file, 'r')
+    h5fs = [h5py.File(h5file, 'r') for h5file in args.h5files]
 
     # Create symbolic vars
-    vid_in = T.ftensor4('vid_in')
+    vid_in = ftensor5('vid_in')
     targets = T.fmatrix('targets')
 
     # Build model
     print("Building network ...")
     #   Get input dimensions
-    network = get_simple_driving_cnn(vid_in)
+    network = get_simple_driving_rnn(vid_in)
     # Instantiate log
     log = defaultdict(list)
     print("Built.")
@@ -134,17 +158,17 @@ if __name__ == '__main__':
     print('Compiled.')
 
     # Precalc for announcing
-    num_train_batches = int(np.ceil(float(len(h5f['train_idxs']))/args.batch_size))
-    num_test_batches = int(np.ceil(float(len(h5f['test_idxs']))/args.batch_size))
+    num_train_batches = int(np.ceil(float(np.sum([len(h5f['train_idxs']) for h5f in h5fs]))/args.batch_size))
+    num_test_batches = int(np.ceil(float(np.sum([len(h5f['test_idxs']) for h5f in h5fs]))/args.batch_size))
 
     # Instantiate iterator
-    d = HDF5VisualIterator()
+    d = MultiHDF5SeqVisualIterator()
 
     # Dump some debug data if we like
     # print_model(network)
     out_fn = get_layer_output_fn([vid_in], network)
-    temp = HDF5VisualIterator()
-    for data in temp.flow(h5f, args.dataset_key, 'train_idxs', batch_size=16, shuffle=True):
+    temp = MultiHDF5SeqVisualIterator()
+    for data in temp.flow(h5fs, args.dataset_keys, 'train_idxs', batch_size=16, shuffle=True):
         vid_in, bY = data
         break
     print(bY.shape)
@@ -159,7 +183,7 @@ if __name__ == '__main__':
 
         # Call the data generator
         data_start_time = time.time()
-        for data in d.flow(h5f, args.dataset_key, 'train_idxs', batch_size=args.batch_size, shuffle=True):
+        for data in d.flow(h5fs, args.dataset_keys, 'train_idxs', batch_size=args.batch_size, shuffle=True):
             data_prep_time = time.time() - data_start_time
             vid_in, bY = data
             # Do a training batch
@@ -184,7 +208,7 @@ if __name__ == '__main__':
         test_err, test_acc, test_batches = 0, 0, 0
         data_start_time = time.time()
 
-        for data in d.flow(h5f, args.dataset_key, 'test_idxs', batch_size=args.batch_size, shuffle=False):
+        for data in d.flow(h5fs, args.dataset_keys, 'test_idxs', batch_size=args.batch_size, shuffle=False):
             data_prep_time = time.time() - data_start_time
             vid_in, bY = data
             # Do a test batch
