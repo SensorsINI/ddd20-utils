@@ -266,14 +266,21 @@ class Controller(object):
 
 
 class ExposureCtl(Controller):
+    '''
+    Automatic exposure control
+    * fps -- update frequency
+    * target -- target average pixel value (between 0 and 255)
+    * cutoff_top -- number of pixels at the top of image to be ignored
+    * cutoff_bot -- number of pixels at the bottom of image to be ignored
+    '''
     def __init__(self, fps=5, target=100, cutoff_top=100, cutoff_bot=50):
         super(ExposureCtl, self).__init__()
         self.fps = fps
         self.dt = 1. / self.fps
         self.target = float(target * 255)
         self.t_pre = 0
-	self.cutoff_top = cutoff_top
-	self.cutoff_bot = cutoff_bot
+        self.cutoff_top = cutoff_top
+        self.cutoff_bot = cutoff_bot
         self.exp_now = 1000 # dummy
 
     def update(self, packet):
@@ -282,7 +289,7 @@ class ExposureCtl(Controller):
         if packet['etype'] != 'frame_event':
             return
         ts, frame = unpack_frame(packet)
-	m = frame[self.cutoff_top:-self.cutoff_bot].mean()
+        m = frame[self.cutoff_top:-self.cutoff_bot].mean()
         upd = (self.target / m - m / self.target) / 2
         exp_new = self.exp_now * (1 + 0.5 * upd)
         exp_new = np.clip(exp_new, 100, 100000).astype(int)
