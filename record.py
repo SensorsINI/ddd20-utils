@@ -190,6 +190,8 @@ if __name__ == '__main__':
     #start recording
     raw_inp = []
     viewer.set_fps(5)
+    
+    
     thread.start_new_thread(end_thread, (raw_inp,))
     while not raw_inp:
 #    while not dataset.exit.is_set():

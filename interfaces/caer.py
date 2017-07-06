@@ -279,7 +279,7 @@ class ExposureCtl(Controller):
     Howvever, if sensor is mounted upside down, then we should ignore a lot of the bottom
     (sky) and maybe a bit of the top (hood).
     '''
-    def __init__(self, fps=5, target=100, cutoff_top=100, cutoff_bot=50):
+    def __init__(self, fps=5, target=100, cutoff_top=10, cutoff_bot=200):
         super(ExposureCtl, self).__init__()
         self.fps = fps
         self.dt = 1. / self.fps
@@ -308,7 +308,7 @@ class ExposureCtl(Controller):
 if __name__ == '__main__':
 
     aer = Monitor()
-    exposure = ExposureCtl(cutoff_bot=150, cutoff_top=10) # set for upside down camera where sky will be at bottom
+    exposure = ExposureCtl(cutoff_bot=80, cutoff_top=0) # set for upside down camera where sky will be at bottom
     while True:
         packet = aer.get()
         if not packet:
