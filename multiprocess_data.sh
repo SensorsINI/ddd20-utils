@@ -1,9 +1,11 @@
 #!/bin/bash
 set -e
-OUT_DIR=/home/dneil/temp/datasets
+# Set these for you:
+OUT_DIR=/home/dneil/datasets/driving
 ORIGIN_DIR=/mnt/ini-nas/DDD17-DavisDrivingDataset2017
-#TODO_FILES=( run5/rec1487839456.hdf5 run5/rec1487844247.hdf5 run5/rec1487849151.hdf5 run5/rec1487856408.hdf5 run5/rec1487858093.hdf5 run5/rec1487842276.hdf5 run5/rec1487846842.hdf5 run5/rec1487849663.hdf5 run5/rec1487857941.hdf5 run5/rec1487860613.hdf5 run5/rec1487864316.hdf5 )
-TODO_FILES=( run5/rec1487839456.hdf5 run5/rec1487844247.hdf5 )
+TODO_FILES=( run5/rec1487839456.hdf5 run5/rec1487844247.hdf5 run5/rec1487849151.hdf5 run5/rec1487856408.hdf5 run5/rec1487858093.hdf5 run5/rec1487842276.hdf5 run5/rec1487846842.hdf5 run5/rec1487849663.hdf5 run5/rec1487857941.hdf5 run5/rec1487860613.hdf5 run5/rec1487864316.hdf5 )
+# TODO_FILES=( run5/rec1487858093.hdf5 run5/rec1487839456.hdf5 )
+# Here on down should not require modification
 for TODO_FILE in "${TODO_FILES[@]}"
 do
     IN_FULL_FILE_PREFIX=${ORIGIN_DIR}/${TODO_FILE%.*}

@@ -112,14 +112,16 @@ def build_train_test_split(h5f, train_div=5*60, test_div=1*60, force=False):
     return
 
 class MultiHDF5SeqVisualIterator(object):
-    def flow(self, h5fs, dataset_keys, indexes_key, batch_size, seq_length=30, shuffle=True, return_time=False):
+    def flow(self, h5fs, dataset_keys, indexes_key, batch_size, seq_length=30, shuffle=True, return_time=False, speed_gt=0):
         # Get some constants
         all_data_idxs = []
         dataset_lookup = {h5f:dataset_key for h5f, dataset_key in zip(h5fs, dataset_keys)}
         for h5f in h5fs:
             avail_idxs = set(np.array(h5f[indexes_key]))
             for idx in np.array(h5f[indexes_key]):
-                if idx+seq_length in avail_idxs:
+                # Check to make sure whole sequence is in the same train/test, and filter on speed
+                above_speed = np.all(np.array(h5f['vehicle_speed'][idx:idx+seq_length]) > speed_gt)
+                if (idx+seq_length in avail_idxs) and above_speed:
                     all_data_idxs.append((h5f, idx))
         num_examples = len(all_data_idxs)
         num_batches = int(np.ceil(float(num_examples)/batch_size))
@@ -239,7 +241,7 @@ def resize_int8(frame, size):
 
 def resize_int16(frame, size=(60,80), method='bilinear'):
     # Assumes data is some small amount around the mean, i.e., DVS event sums
-    return imresize((frame+127).astype('float32'), size, interp=method).astype('uint8')
+    return imresize((frame.astype('float32')+127.), size, interp=method).astype('uint8')
 
 def resize_data_into_new_key(h5f, key, new_key, new_size, chunk_size=1024):
     chunk_generator = yield_chunker(h5f[key], chunk_size)
@@ -248,9 +250,9 @@ def resize_data_into_new_key(h5f, key, new_key, new_size, chunk_size=1024):
     dtype = h5f[key].dtype
     row_idx = 0
 
-    if dtype == 'uint8':
+    if key == 'aps_frame':
         do_resize = resize_int8
-    elif dtype == 'int16':
+    elif key == 'dvs_frame':
         do_resize = resize_int16
     else:
         raise AssertionError, 'Unknown data type'

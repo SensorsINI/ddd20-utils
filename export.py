@@ -153,6 +153,8 @@ if __name__ == '__main__':
                 print('resetting t_pre (current frame)')
                 t_pre = d['timestamp'] + t_offset
             while fixed_dt and t_pre + args.binsize < d['timestamp'] + t_offset:
+                # SYSTEM Timestamp version:
+                current_row['timestamp'] = (sys_ts - tstart * 1e-6)
                 f_out.save(deepcopy(current_row))
                 current_row['dvs_frame'][:,:] = 0
                 current_row['timestamp'] = t_pre
@@ -182,7 +184,9 @@ if __name__ == '__main__':
                     # save if we're in the middle of a packet, otherwise
                     # wait for more data
                     if sel.stop < num_evts:
-                        current_row['timestamp'] = t_pre
+                        # SYSTEM Timestamp version:
+                        current_row['timestamp'] = (sys_ts - tstart * 1e-6)
+                        #current_row['timestamp'] = t_pre
                         f_out.save(deepcopy(current_row))
                         current_row['dvs_frame'][:,:] = 0
                         t_pre += args.binsize
@@ -198,6 +202,8 @@ if __name__ == '__main__':
                     offset += n
                     ev_count += n
                     if ev_count == -args.binsize:
+                        # SYSTEM Timestamp version:
+                        current_row['timestamp'] = (sys_ts - tstart * 1e-6)
                         f_out.save(deepcopy(current_row))
                         current_row['dvs_frame'][:,:] = 0
                         ev_count = 0
