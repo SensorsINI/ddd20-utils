@@ -239,9 +239,9 @@ class MultiHDF5VisualIterator(object):
 def resize_int8(frame, size):
     return imresize(frame, size)
 
-def resize_int16(frame, size=(60,80), method='bilinear'):
+def resize_int16(frame, size=(60,80), method='bilinear', climit=[-15,15]):
     # Assumes data is some small amount around the mean, i.e., DVS event sums
-    return imresize((frame.astype('float32')+127.), size, interp=method).astype('uint8')
+    return imresize((np.clip(frame, climit[0], climit[1]).astype('float32')+127), size, interp=method).astype('uint8')
 
 def resize_data_into_new_key(h5f, key, new_key, new_size, chunk_size=1024):
     chunk_generator = yield_chunker(h5f[key], chunk_size)
