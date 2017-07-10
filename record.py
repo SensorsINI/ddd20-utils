@@ -20,6 +20,7 @@ import numpy as np
 import interfaces, datasets
 from reporting import Stats
 from view import Viewer, unpack_data
+import Queue
 
 
 BUFSIZE_DS = 16384
