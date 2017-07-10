@@ -13,11 +13,11 @@ do
 
     # Export data
     echo "### Exporting frames... ###"
-    ipython ./export.py -- ${IN_FULL_FILE_PREFIX}.hdf5 --binsize 0.100 --keep_frames 1 --keep_events 0 --out_file ${OUT_FULL_FILE_PREFIX}_frames.hdf5
+    ipython ./export.py -- ${IN_FULL_FILE_PREFIX}.hdf5 --binsize 0.100 --export_aps 1 --export_dvs 0 --out_file ${OUT_FULL_FILE_PREFIX}_frames.hdf5
     echo "### Exporting constant events... ###"
-    ipython ./export.py -- ${IN_FULL_FILE_PREFIX}.hdf5 --binsize -5000 --keep_frames 0 --keep_events 1 --out_file ${OUT_FULL_FILE_PREFIX}_bin5k.hdf5
+    ipython ./export.py -- ${IN_FULL_FILE_PREFIX}.hdf5 --binsize -5000 --export_aps 0 --export_dvs 1 --out_file ${OUT_FULL_FILE_PREFIX}_bin5k.hdf5
     echo "### Exporting constant time slices... ###"
-    ipython ./export.py -- ${IN_FULL_FILE_PREFIX}.hdf5 --binsize 0.010 --keep_frames 0 --keep_events 1 --out_file ${OUT_FULL_FILE_PREFIX}_bin10ms.hdf5
+    ipython ./export.py -- ${IN_FULL_FILE_PREFIX}.hdf5 --binsize 0.010 --export_aps 0 --export_dvs 1 --out_file ${OUT_FULL_FILE_PREFIX}_bin10ms.hdf5
 
     # Prepare and resize
     ipython ./prepare_cnn_data.py -- --filename ${OUT_FULL_FILE_PREFIX}_frames.hdf5 --rewrite 1 --skip_mean_std 1

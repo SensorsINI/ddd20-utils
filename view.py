@@ -429,6 +429,7 @@ class Controller(Interface):
             return
         y -= y.min()
         y = y / y.max() * height
+        x = x.clip(0, self.len - 1)
         img[offset+height-y.astype(int), x] = 1
 
     def plot_pixels(self, img, name, offset=0, height=1):

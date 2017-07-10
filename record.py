@@ -63,9 +63,6 @@ ignition_status = {
         'run': 2,
         'start': 3
         }
-        
-# gear_lever_position, it actually can have more values than transmission_gear_position according to specs: 
-        #neutral, park, reverse, drive, sport, low, first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth
 
 gear_position = {
         'neutral': 0,
@@ -86,7 +83,6 @@ gear_position = {
         'reverse': -1,
         'park': -2,
         }
-        
 
 conversions_vi = {
         'brake_pedal_status': float,
@@ -94,9 +90,9 @@ conversions_vi = {
         'high_beam_status': float,
         'parking_brake_status': float,
         'windshield_wiper_status': float,
-        'ignition_status': lambda v: ignition_status.get(v),
-        'transmission_gear_position': lambda v: gear_position.get(v),
-        'gear_lever_position': lambda v: gear_position.get(v,99), # added defauult of 99 for unknown values rather than None
+        'ignition_status': lambda v: ignition_status.get(v, 99),
+        'transmission_gear_position': lambda v: gear_position.get(v, 99),
+        'gear_lever_position': lambda v: gear_position.get(v, 99), # added defauult of 99 for unknown values rather than None
         }
 
 # -- end of config --

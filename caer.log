@@ -1,0 +1,856 @@
+2017-06-23 16:52:38 (TZ-0700): NOTICE: Logger: Initialization successful with log-level 5.
+2017-06-23 16:52:38 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:39 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:40 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:41 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:42 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:44 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:45 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:46 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:47 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 16:52:58 (TZ-0700): NOTICE: Logger: Initialization successful with log-level 5.
+2017-06-23 16:52:58 (TZ-0700): ERROR: DAVIS ID-1 SN-03460001 [2:5]: Error message: 'System started.' (code 0 at time 2523).
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:54:48 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 16:58:18 (TZ-0700): ERROR: Config Server: uv_tcp_getpeername failed, error -107 (ENOTCONN).
+2017-06-23 16:58:18 (TZ-0700): ERROR: Config Server: AfterShutdown failed, error -107 (ENOTCONN).
+2017-06-23 16:58:18 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -32 (EPIPE). Closing connection.
+2017-06-23 16:58:18 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -32 (EPIPE). Closing connection.
+2017-06-23 16:59:49 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-23 16:59:49 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -32 (EPIPE). Closing connection.
+2017-06-23 16:59:49 (TZ-0700): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-23 17:12:00 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:02 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:03 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:04 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:05 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:06 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:07 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:08 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:10 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:11 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:12 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:13 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:14 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:15 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:16 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:18 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:19 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:20 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:21 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:22 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:23 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:24 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:26 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:27 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:28 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:29 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:30 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:31 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:32 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:34 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:35 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:36 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:37 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:38 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:39 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:41 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:42 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:43 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:44 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:45 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:46 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:47 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:49 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:50 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:51 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:52 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:53 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:54 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:56 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:57 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:58 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:12:59 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:00 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:01 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:03 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:04 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:05 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:06 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:07 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:08 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:10 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:11 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:12 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:13 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:14 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:15 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:17 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:18 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:19 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:20 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:21 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:22 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:23 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:25 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:26 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:27 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:28 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:29 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:30 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:31 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:33 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:34 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:35 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:36 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:37 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:38 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:39 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:41 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:42 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:43 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:44 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:45 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:46 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:47 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:48 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:50 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:51 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:52 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:53 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:54 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:55 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:57 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-23 17:13:58 (TZ-0700): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-28 16:14:05 (TZ-0600): NOTICE: Logger: Initialization successful with log-level 5.
+2017-06-28 16:14:05 (TZ-0600): ERROR: DAVIS ID-1 SN-03460001 [2:2]: Error message: 'System started.' (code 0 at time 2523).
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:01 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:30 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:15:45 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:16:26 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:17:34 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-28 16:20:04 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:17:11 (TZ-0600): NOTICE: Logger: Initialization successful with log-level 5.
+2017-06-29 15:17:11 (TZ-0600): ERROR: DAVIS ID-1 SN-03460001 [2:5]: Error message: 'System started.' (code 0 at time 2523).
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:41 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:21:50 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:28:29 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:48:52 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 15:52:58 (TZ-0600): ERROR: 8-NetTCPServerOutput: Detected timestamp going back, expected at least 2147509999 but got 28227. Ignoring packet of type 2 from source 1, with 1 events!
+2017-06-29 15:52:58 (TZ-0600): ERROR: 9-NetUDPOutput: Detected timestamp going back, expected at least 2147509999 but got 28227. Ignoring packet of type 2 from source 1, with 1 events!
+2017-06-29 16:07:44 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -104 (ECONNRESET). Closing connection.
+2017-06-29 16:07:44 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -32 (EPIPE). Closing connection.
+2017-06-29 16:07:44 (TZ-0600): ERROR: libuvWriteStatusCheck: Write failed with error -125 (ECANCELED). Closing connection.
+2017-06-29 16:08:31 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:32 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:34 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:35 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:36 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:38 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:39 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:41 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:42 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:43 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:45 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:46 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:47 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:49 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:50 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:51 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:52 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:54 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:55 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:57 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:58 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:08:59 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:01 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:02 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:03 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:04 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:06 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:07 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:08 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:10 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:11 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:12 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:14 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:15 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:16 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:18 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:19 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:20 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:22 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:23 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:24 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:25 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:26 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:27 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:29 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:30 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:31 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:32 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:34 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:35 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:36 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:38 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:39 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:40 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:42 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:43 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:44 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:46 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:47 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:48 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:50 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:51 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:52 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:54 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:55 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:56 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:58 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:09:59 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:00 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:01 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:03 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:04 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:05 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:07 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:08 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:09 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:11 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:12 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:13 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:15 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:16 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:17 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:19 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:20 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:21 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:23 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:24 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:25 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:27 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:28 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:29 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:31 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:32 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:33 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:35 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:36 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:10:37 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:36 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:37 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:38 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:40 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:41 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:42 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:43 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:44 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:45 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:47 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:48 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:49 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:50 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:51 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:52 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:53 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:55 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:56 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:57 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:58 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:12:59 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:00 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:02 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:03 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:04 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:05 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:06 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:08 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:09 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:10 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:11 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:12 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:14 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:15 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:16 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:17 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-06-29 16:13:18 (TZ-0600): CRITICAL: DAVIS ID-1: Failed to open device.
+2017-07-03 11:19:33 (TZ-0600): NOTICE: Logger: Initialization successful with log-level 5.
+2017-07-03 11:19:33 (TZ-0600): ERROR: DAVIS ID-1 SN-03460001 [2:8]: Error message: 'System started.' (code 0 at time 2523).
+2017-07-03 11:19:33 (TZ-0600): ALERT: DAVIS ID-1 SN-03460001 [2:8]: DVS: Y address out of range (0-345): 346.

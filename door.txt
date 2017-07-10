@@ -1,0 +1,10 @@
+{'timestamp': 1498349119043372, u'name': u'door_status', u'value': u'driver', u'event': True}
+{'timestamp': 1498349120544013, u'name': u'door_status', u'value': u'driver', u'event': False}
+{'timestamp': 1498349123543598, u'name': u'door_status', u'value': u'driver', u'event': True}
+{'timestamp': 1498349125044265, u'name': u'door_status', u'value': u'driver', u'event': False}
+{'timestamp': 1498349127592343, u'name': u'door_status', u'value': u'rear_right', u'event': True}
+{'timestamp': 1498349130143666, u'name': u'door_status', u'value': u'rear_right', u'event': False}
+{'timestamp': 1498349147092145, u'name': u'door_status', u'value': u'passenger', u'event': True}
+{'timestamp': 1498349149045301, u'name': u'door_status', u'value': u'passenger', u'event': False}
+^CTraceback (most recent call last):
+

@@ -51,7 +51,7 @@ class HDF5(mp.Process):
                 f.write(str(res))
                 pass
             except KeyboardInterrupt:
-#                print('datasets.run got interrupt')
+                #print('datasets.run got interrupt')
                 self.exit.set()
         f.close()
         self.close()
@@ -75,6 +75,7 @@ class HDF5(mp.Process):
                 extra_shape = ttype[1]
                 ttype = ttype[0]
                 self.ndims[tname] += 1
+            print(tname)
             self.datasets[tname] = rnode.create_dataset(
                 subtname,
                 (SIZE_INC,) + extra_shape,
