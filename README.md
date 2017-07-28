@@ -5,7 +5,7 @@ Software released as part of the publication
 Jonathan Binas, Daniel Niel, Shih-Chii Liu, Tobi Delbruck
 Institute of Neuroinformatics, University of Zurich and ETH Zurich, Switzerland
 
-See https://docs.google.com/document/d/1HM0CSmjO8nOpUeTvmPjopcBcVCk7KXvLUuiZFS6TWSg/pub for details.
+See http://goo.gl/ESPs4N for details.
 
 Note: the software has been tested with python 2.7, support for newer versions will follow.
 
