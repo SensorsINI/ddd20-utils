@@ -386,8 +386,10 @@ class Viewer(Interface):
         c, r = (173, 130), 65 #center, radius
         a = self.cache['steering_wheel_angle']
         a_rad = + a / 180. * np.pi + np.pi / 2
+        if self.rotate180:
+            a_rad=np.pi-a_rad
         t = (c[0] + int(np.cos(a_rad) * r), c[1] - int(np.sin(a_rad) * r))
-        cv2.line(img, c, t, 255, 2, CV_AA)
+        cv2.line(img, c, t, 127, 2, CV_AA)
         cv2.circle(img, c, r, 255, 1, CV_AA)
         cv2.line(img, (c[0]-r+5, c[1]), (c[0]-r, c[1]), 255, 1, CV_AA)
         cv2.line(img, (c[0]+r-5, c[1]), (c[0]+r, c[1]), 255, 1, CV_AA)
