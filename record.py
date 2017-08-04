@@ -151,7 +151,7 @@ if __name__ == '__main__':
         vi.get()
     
     # pre-recording loop
-    viewer = Viewer(zoom=1.41)
+    viewer = Viewer(zoom=1.41,rotate180=True)
     inp_detect = []
     thread.start_new_thread(input_thread, (inp_detect,))
     while not inp_detect:

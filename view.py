@@ -303,7 +303,7 @@ class Viewer(Interface):
         ox=0
         oy=0
         cv2.moveWindow('frame', ox, oy)
-        cv2.moveWindow('polarity', ox + int(348*self.zoom), oy)
+        cv2.moveWindow('polarity', ox + int(448*self.zoom), oy)
         self.set_fps(max_fps)
         self.pol_img = 0.5 * np.ones(DVS_SHAPE)
         self.t_now = 0
@@ -512,7 +512,10 @@ if __name__ == '__main__':
     t_offset = 0
     r180=True
     print('recording duration', (m.tmax - m.tmin) * 1e-6, 's')
-    # direct skip by command line arg
+    # direct skip by command line
+#    if len(sys.argv)==1:
+#        print "usage: view.py file.hdf5\nview.py file.hdf5 tmin\nview.py file.hdf5 %n"
+    
     if len(sys.argv) == 3:
         n_, type_ = sys.argv[2][:-1].strip(), sys.argv[2][-1].strip()
         if type_ == '%':
