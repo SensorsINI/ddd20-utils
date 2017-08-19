@@ -23,9 +23,9 @@ from view import Viewer, unpack_data
 import Queue
 
 
-BUFSIZE_DS = 16384
-BUFSIZE_AER = 2048
-BUFSIZE_OXC = 256
+BUFSIZE_DS = 32384
+BUFSIZE_AER = 8192
+BUFSIZE_OXC = 1024
 
 dtypes = {
         'dvs/data': (datasets.h5py.special_dtype(vlen=np.uint8), (3,)),
