@@ -309,6 +309,8 @@ class Viewer(Interface):
         self.count = {}
         self.cache = {}
         self.font = cv2.FONT_HERSHEY_SIMPLEX
+        self.display_info = True
+        self.playback_speed = 1.
 
     def set_fps(self, max_fps):
         self.min_dt = 1. / max_fps
@@ -325,17 +327,18 @@ class Viewer(Interface):
             if 'data' not in d: #
                 unpack_data(d)
             img = (d['data'] / 256).astype(np.uint8)
-            self._plot_steering_wheel(img)
-            self._print(img, (50,220), 'accelerator_pedal_position', '%')
-            self._print(img, (100,220), 'brake_pedal_status', 'brake', True)
-            self._print(img, (200,220), 'vehicle_speed', 'km/h')
-            self._print(img, (300,220), 'engine_speed', 'rpm')
+            if self.display_info:
+                self._plot_steering_wheel(img)
+                self._print(img, (50,220), 'accelerator_pedal_position', '%')
+                self._print(img, (100,220), 'brake_pedal_status', 'brake', True)
+                self._print(img, (200,220), 'vehicle_speed', 'km/h')
+                self._print(img, (300,220), 'engine_speed', 'rpm')
             if t is not None:
                 self._plot_timeline(img)
             if self.zoom != 1:
                 img = cv2.resize(img, None, fx=self.zoom, fy=self.zoom, interpolation=cv2.INTER_CUBIC)
             cv2.imshow('frame', img)
-            cv2.waitKey(1)
+            #cv2.waitKey(1)
             self.t_pre[etype] = time.time()
         elif etype == 'polarity_event':
             if 'data' not in d: #
@@ -348,7 +351,7 @@ class Viewer(Interface):
                             fx=self.zoom, fy=self.zoom,
                             interpolation=cv2.INTER_CUBIC)
                 cv2.imshow('polarity', self.pol_img)
-                cv2.waitKey(1)
+                #cv2.waitKey(1)
                 self.pol_img = 0.5 * np.ones(DVS_SHAPE)
                 self.t_pre[etype] = time.time()
         elif etype in VIEW_DATA:
@@ -358,6 +361,15 @@ class Viewer(Interface):
             self.t_pre[etype] = time.time()
         if t is not None:
             self._set_t(t)
+        # handle keyboad input
+        key_pressed = cv2.waitKey(1)
+        if key_pressed != -1:
+            if key_pressed == 105: # 'i' pressed
+                self.display_info = not self.display_info
+            if key_pressed == 82: # up key pressed
+                self.playback_speed = min(self.playback_speed + 0.2, 2.0)
+            if key_pressed == 84: # down key pressed
+                self.playback_speed = max(self.playback_speed - 0.2, 0.2)
 
     def _plot_steering_wheel(self, img):
         if 'steering_wheel_angle' not in self.cache:
