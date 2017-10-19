@@ -295,13 +295,15 @@ class Interface(object):
 
 class Viewer(Interface):
     ''' Simple visualizer for events '''
-    def __init__(self, max_fps=40, zoom=1, **kwargs):
+    def __init__(self, max_fps=40, zoom=1, rotate180=False, **kwargs):
         super(Viewer, self).__init__(**kwargs)
         self.zoom = zoom
         cv2.namedWindow('frame')
         cv2.namedWindow('polarity')
-        cv2.moveWindow('frame', 400, 300)
-        cv2.moveWindow('polarity', 400 + int(348 * self.zoom), 300)
+        ox=0
+        oy=0
+        cv2.moveWindow('frame', ox, oy)
+        cv2.moveWindow('polarity', ox + int(448*self.zoom), oy)
         self.set_fps(max_fps)
         self.pol_img = 0.5 * np.ones(DVS_SHAPE)
         self.t_now = 0
@@ -311,6 +313,7 @@ class Viewer(Interface):
         self.font = cv2.FONT_HERSHEY_SIMPLEX
         self.display_info = True
         self.playback_speed = 1.
+        self.rotate180=rotate180
 
     def set_fps(self, max_fps):
         self.min_dt = 1. / max_fps
@@ -327,6 +330,15 @@ class Viewer(Interface):
             if 'data' not in d: #
                 unpack_data(d)
             img = (d['data'] / 256).astype(np.uint8)
+            if self.rotate180==True:
+                # grab the dimensions of the image and calculate the center
+                # of the image
+                (h, w) = img.shape[:2]
+                center = (w / 2, h / 2)
+                 
+                # rotate the image by 180 degrees
+                M = cv2.getRotationMatrix2D(center, 180, 1.0)
+                img = cv2.warpAffine(img, M, (w, h))
             if self.display_info:
                 self._plot_steering_wheel(img)
                 self._print(img, (50,220), 'accelerator_pedal_position', '%')
@@ -350,6 +362,15 @@ class Viewer(Interface):
                             self.pol_img, None,
                             fx=self.zoom, fy=self.zoom,
                             interpolation=cv2.INTER_CUBIC)
+                    if self.rotate180==True:
+                        # grab the dimensions of the image and calculate the center
+                        # of the image
+                        (h, w) = self.pol_img.shape[:2]
+                        center = (w / 2, h / 2)
+                         
+                        # rotate the image by 180 degrees
+                        M = cv2.getRotationMatrix2D(center, 180, 1.0)
+                        self.pol_img = cv2.warpAffine(self.pol_img, M, (w, h))
                 cv2.imshow('polarity', self.pol_img)
                 #cv2.waitKey(1)
                 self.pol_img = 0.5 * np.ones(DVS_SHAPE)
@@ -377,8 +398,10 @@ class Viewer(Interface):
         c, r = (173, 130), 65 #center, radius
         a = self.cache['steering_wheel_angle']
         a_rad = + a / 180. * np.pi + np.pi / 2
+        if self.rotate180:
+            a_rad=np.pi-a_rad
         t = (c[0] + int(np.cos(a_rad) * r), c[1] - int(np.sin(a_rad) * r))
-        cv2.line(img, c, t, 255, 2, CV_AA)
+        cv2.line(img, c, t, 127, 2, CV_AA)
         cv2.circle(img, c, r, 255, 1, CV_AA)
         cv2.line(img, (c[0]-r+5, c[1]), (c[0]-r, c[1]), 255, 1, CV_AA)
         cv2.line(img, (c[0]+r-5, c[1]), (c[0]+r, c[1]), 255, 1, CV_AA)
@@ -501,16 +524,22 @@ if __name__ == '__main__':
     t = time.time()
     t_pre = 0
     t_offset = 0
-    v = Viewer(tmin=m.tmin * 1e-6, tmax=m.tmax * 1e-6,
-            zoom=1.41, update_callback=c.update)
+    r180=True
     print('recording duration', (m.tmax - m.tmin) * 1e-6, 's')
-    # direct skip by command line arg
+    # direct skip by command line
+#    if len(sys.argv)==1:
+#        print "usage: view.py file.hdf5\nview.py file.hdf5 tmin\nview.py file.hdf5 %n"
+    
     if len(sys.argv) == 3:
         n_, type_ = sys.argv[2][:-1].strip(), sys.argv[2][-1].strip()
         if type_ == '%':
             m.search((m.tmax - m.tmin) * 1e-2 * float(n_) + m.tmin)
+#        elif type_=='r':
+#            r180=True
         else:
             m.search(float(n_) * 1e6 + m.tmin)
+    v = Viewer(tmin=m.tmin * 1e-6, tmax=m.tmax * 1e-6,
+            zoom=1.41, rotate180=r180,update_callback=c.update)
     # run main loop
     ts_reset = False
     while m.has_data:
