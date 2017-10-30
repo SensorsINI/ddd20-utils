@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 '''
 Author: J. Binas <jbinas@gmail.com>, 2017
