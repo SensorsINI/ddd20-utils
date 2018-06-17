@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 '''
 Experimental viewer for DAVIS + OpenXC data
@@ -513,31 +513,43 @@ def caer_event_from_row(row):
     return int(sys_ts) * 1e-6, unpack_data(d)
 
 
-
 if __name__ == '__main__':
 
     fname = sys.argv[1].strip()
-    # cv2.startWindowThread()
     c = Controller(fname,)
     m = MergedStream(HDF5Stream(fname, VIEW_DATA))
     c._search_callback = m.search
     t = time.time()
     t_pre = 0
     t_offset = 0
-    r180=True
+<<<<<<< HEAD
+    r180=False
     print('recording duration', (m.tmax - m.tmin) * 1e-6, 's')
     # direct skip by command line
-#    if len(sys.argv)==1:
-#        print "usage: view.py file.hdf5\nview.py file.hdf5 tmin\nview.py file.hdf5 %n"
-    
-    if len(sys.argv) == 3:
-        n_, type_ = sys.argv[2][:-1].strip(), sys.argv[2][-1].strip()
-        if type_ == '%':
+    # parse second argument
+    try:
+        second_opt = sys.argv[2].strip()
+        n_, type_ = second_opt[:-1], second_opt[-1]
+        if second_opt == "true":
+            r180 = True
+        elif type_ == '%':
             m.search((m.tmax - m.tmin) * 1e-2 * float(n_) + m.tmin)
-#        elif type_=='r':
-#            r180=True
-        else:
+        elif type_ == 's':
             m.search(float(n_) * 1e6 + m.tmin)
+    except:
+        pass
+    # parse third argument
+    try:
+        third_opt = sys.argv[3].strip()
+        n_, type_ = third_opt[:-1], third_opt[-1]
+        if third_opt == "true":
+            r180 = True
+        elif type_ == '%':
+            m.search((m.tmax - m.tmin) * 1e-2 * float(n_) + m.tmin)
+        elif type_ == 's':
+            m.search(float(n_) * 1e6 + m.tmin)
+    except:
+        pass
     v = Viewer(tmin=m.tmin * 1e-6, tmax=m.tmax * 1e-6,
             zoom=1.41, rotate180=r180,update_callback=c.update)
     # run main loop

@@ -35,7 +35,7 @@ $ python view.py <recorded_file.hdf5> Xs
 
 $ python export.py [-h] [--tstart TSTART] [--tstop TSTOP] [--binsize BINSIZE]
                  [--update_prog_every UPDATE_PROG_EVERY]
-                 [--keep_frames KEEP_FRAMES] [--keep_events KEEP_EVENTS]
+                 [--export_aps EXPORT_APS] [--export_dvs EXPORT_DVS]
                  [--out_file OUT_FILE]
                  filename
 

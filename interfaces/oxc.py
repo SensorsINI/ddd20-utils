@@ -15,7 +15,6 @@ import numpy as np
 from openxc.tools import dump as oxc
 import Queue
 
-
 class Monitor(mp.Process):
     def __init__(self, bufsize=256):
         super(Monitor, self).__init__()
