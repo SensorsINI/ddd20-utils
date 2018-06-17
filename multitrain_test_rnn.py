@@ -183,7 +183,7 @@ if __name__ == '__main__':
 
         # Call the data generator
         data_start_time = time.time()
-        for data in d.flow(h5fs, args.dataset_keys, 'train_idxs', batch_size=args.batch_size, shuffle=True):
+        for data in d.flow(h5fs, args.dataset_keys, 'train_idxs', batch_size=args.batch_size, shuffle=True, speed_gt=50):
             data_prep_time = time.time() - data_start_time
             vid_in, bY = data
             # Do a training batch
@@ -208,7 +208,7 @@ if __name__ == '__main__':
         test_err, test_acc, test_batches = 0, 0, 0
         data_start_time = time.time()
 
-        for data in d.flow(h5fs, args.dataset_keys, 'test_idxs', batch_size=args.batch_size, shuffle=False):
+        for data in d.flow(h5fs, args.dataset_keys, 'test_idxs', batch_size=args.batch_size, shuffle=False, speed_gt=50):
             data_prep_time = time.time() - data_start_time
             vid_in, bY = data
             # Do a test batch
