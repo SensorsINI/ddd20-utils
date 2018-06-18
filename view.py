@@ -299,6 +299,7 @@ class Viewer(Interface):
         super(Viewer, self).__init__(**kwargs)
         self.zoom = zoom
         cv2.namedWindow('frame')
+        cv2.startWindowThread() # tobi added from https://stackoverflow.com/questions/21810452/cv2-imshow-command-doesnt-work-properly-in-opencv-python/24172409#24172409
         cv2.namedWindow('polarity')
         cv2.moveWindow('frame', 400, 300)
         cv2.moveWindow('polarity', 400 + int(348 * self.zoom), 300)
