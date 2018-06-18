@@ -523,7 +523,6 @@ if __name__ == '__main__':
     t = time.time()
     t_pre = 0
     t_offset = 0
-<<<<<<< HEAD
     r180=False
     print('recording duration', (m.tmax - m.tmin) * 1e-6, 's')
     # direct skip by command line
