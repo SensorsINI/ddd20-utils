@@ -111,6 +111,48 @@ def build_train_test_split(h5f, train_div=5*60, test_div=1*60, force=False):
     h5f.create_dataset('test_idxs', data=np.array(test_idxs))
     return
 
+class MultiHDF5SeqVisualIterator(object):
+    def flow(self, h5fs, dataset_keys, indexes_key, batch_size, seq_length=30, shuffle=True, return_time=False, speed_gt=0):
+        # Get some constants
+        all_data_idxs = []
+        dataset_lookup = {h5f:dataset_key for h5f, dataset_key in zip(h5fs, dataset_keys)}
+        for h5f in h5fs:
+            avail_idxs = set(np.array(h5f[indexes_key]))
+            for idx in np.array(h5f[indexes_key]):
+                # Check to make sure whole sequence is in the same train/test, and filter on speed
+                above_speed = np.all(np.array(h5f['vehicle_speed'][idx:idx+seq_length]) > speed_gt)
+                if (idx+seq_length in avail_idxs) and above_speed:
+                    all_data_idxs.append((h5f, idx))
+        num_examples = len(all_data_idxs)
+        num_batches = int(np.ceil(float(num_examples)/batch_size))
+        # Shuffle the data
+        if shuffle:
+            np.random.shuffle(all_data_idxs)
+        b = 0
+        while b < num_batches:
+            curr_idxs = all_data_idxs[b*batch_size:(b+1)*batch_size]
+            todo_dict = defaultdict(list)
+            for (h5f, idx) in curr_idxs:
+                todo_dict[h5f].append(idx)
+            vids, bY, times = [], [], []
+            for h5f, idxs in todo_dict.items():
+                vids.extend([np.array(h5f[dataset_lookup[h5f]][curr_idx:curr_idx+seq_length]) for curr_idx in idxs])
+                bY.extend([h5f['steering_wheel_angle'][curr_idx:curr_idx+seq_length] for curr_idx in idxs])
+                times.extend([h5f['timestamp'][curr_idx:curr_idx+seq_length] for curr_idx in idxs])
+
+            # Add a single-dimensional color channel for grayscale
+            vids = np.expand_dims(vids, axis=2).astype('float32')/255.-0.5
+            # Get rid of infinity and NaNs which sometimes happens from normalizing
+            vids[np.isnan(vids)] = 0.
+            vids[np.isinf(vids)] = 0.
+            # Turn into a numpy-compatible vector
+            bY = np.array(bY)
+            if return_time:
+                yield [vids.astype('float32'), bY.astype('float32'), np.array(times).astype('float32')]
+            else:
+                yield [vids.astype('float32'), bY.astype('float32')]
+            b += 1
+
 class HDF5SeqVisualIterator(object):
     def flow(self, h5f, dataset_key, indexes_key, batch_size, set_length=30, shuffle=True):
         # Get some constants
@@ -197,8 +239,9 @@ class MultiHDF5VisualIterator(object):
 def resize_int8(frame, size):
     return imresize(frame, size)
 
-def resize_int16(frame, size):
-    return imresize((frame+127).astype('uint8'), size)
+def resize_int16(frame, size=(60,80), method='bilinear', climit=[-15,15]):
+    # Assumes data is some small amount around the mean, i.e., DVS event sums
+    return imresize((np.clip(frame, climit[0], climit[1]).astype('float32')+127), size, interp=method).astype('uint8')
 
 def resize_data_into_new_key(h5f, key, new_key, new_size, chunk_size=1024):
     chunk_generator = yield_chunker(h5f[key], chunk_size)
@@ -207,9 +250,9 @@ def resize_data_into_new_key(h5f, key, new_key, new_size, chunk_size=1024):
     dtype = h5f[key].dtype
     row_idx = 0
 
-    if dtype == 'uint8':
+    if key == 'aps_frame':
         do_resize = resize_int8
-    elif dtype == 'int16':
+    elif key == 'dvs_frame':
         do_resize = resize_int16
     else:
         raise AssertionError, 'Unknown data type'

@@ -1,5 +1,13 @@
 #!/usr/bin/python
 
+'''
+Recorder for DAVIS + OpenXC data
+Author: J. Binas <jbinas@gmail.com>, 2017
+
+This software is released under the
+GNU LESSER GENERAL PUBLIC LICENSE Version 3.
+'''
+
 from __future__ import print_function
 import time
 import numpy as np
@@ -258,14 +266,27 @@ class Controller(object):
 
 
 class ExposureCtl(Controller):
-    def __init__(self, fps=5, target=100, cutoff_top=100, cutoff_bot=50):
+    '''
+    Automatic exposure control
+    * fps -- update frequency
+    * target -- target average pixel value (between 0 and 255)
+    * cutoff_top -- number of pixels at the top of image to be ignored
+    * cutoff_bot -- number of pixels at the bottom of image to be ignored
+    
+    We generally want to expose for road which is bottom of image. Therefore the default
+    is to ignore the top 100 pixels (cutoff_top) and to ignore the bottom 50 (cutoff_bot) 
+    which might be the hood. 
+    Howvever, if sensor is mounted upside down, then we should ignore a lot of the bottom
+    (sky) and maybe a bit of the top (hood).
+    '''
+    def __init__(self, fps=5, target=100, cutoff_top=10, cutoff_bot=200):
         super(ExposureCtl, self).__init__()
         self.fps = fps
         self.dt = 1. / self.fps
         self.target = float(target * 255)
         self.t_pre = 0
-	self.cutoff_top = cutoff_top
-	self.cutoff_bot = cutoff_bot
+        self.cutoff_top = cutoff_top
+        self.cutoff_bot = cutoff_bot
         self.exp_now = 1000 # dummy
 
     def update(self, packet):
@@ -274,7 +295,7 @@ class ExposureCtl(Controller):
         if packet['etype'] != 'frame_event':
             return
         ts, frame = unpack_frame(packet)
-	m = frame[self.cutoff_top:-self.cutoff_bot].mean()
+        m = frame[self.cutoff_top:-self.cutoff_bot].mean()
         upd = (self.target / m - m / self.target) / 2
         exp_new = self.exp_now * (1 + 0.5 * upd)
         exp_new = np.clip(exp_new, 100, 100000).astype(int)
@@ -287,7 +308,7 @@ class ExposureCtl(Controller):
 if __name__ == '__main__':
 
     aer = Monitor()
-    exposure = ExposureCtl()
+    exposure = ExposureCtl(cutoff_bot=80, cutoff_top=0) # set for upside down camera where sky will be at bottom
     while True:
         packet = aer.get()
         if not packet:

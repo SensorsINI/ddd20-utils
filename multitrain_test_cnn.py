@@ -62,19 +62,19 @@ def get_simple_driving_cnn(vid_in, dims=(60, 80), dense_sizes=[64, 64]):
 
     # Simple ConvNet
     l_cnn = lasagne.layers.Conv2DLayer(l_vid_in,
-                                        num_filters=8, filter_size=(3, 3),
+                                        num_filters=16, filter_size=(3, 3),
                                         nonlinearity=lasagne.nonlinearities.leaky_rectify)
     l_cnn = lasagne.layers.MaxPool2DLayer(l_cnn, pool_size=(2, 2))
     l_cnn = lasagne.layers.Conv2DLayer(l_cnn,
-                                       num_filters=8, filter_size=(3, 3),
+                                       num_filters=16, filter_size=(3, 3),
                                        nonlinearity=lasagne.nonlinearities.leaky_rectify)
     l_cnn = lasagne.layers.MaxPool2DLayer(l_cnn, pool_size=(2, 2))
     l_cnn = lasagne.layers.Conv2DLayer(l_cnn,
-                                       num_filters=8, filter_size=(3, 3),
+                                       num_filters=16, filter_size=(3, 3),
                                        nonlinearity=lasagne.nonlinearities.leaky_rectify)
     l_cnn = lasagne.layers.MaxPool2DLayer(l_cnn, pool_size=(2, 2))
     l_cnn = lasagne.layers.Conv2DLayer(l_cnn,
-                                       num_filters=8, filter_size=(3, 3),
+                                       num_filters=16, filter_size=(3, 3),
                                        nonlinearity=lasagne.nonlinearities.leaky_rectify)
     # Dense layers
     for dense_size in dense_sizes:
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     # File and path naming stuff
     parser.add_argument('--h5files',    nargs='+', default='/home/dneil/h5fs/driving/rec1487864316_bin5k.hdf5', help='HDF5 File that has the data.')
     parser.add_argument('--run_id',       default='default', help='ID of the run, used in saving.')
-    parser.add_argument('--filename',     default='driving_cnn_19.4', help='Filename to save model and log to.')
+    parser.add_argument('--filename',     default='driving_cnn_19.4_multi', help='Filename to save model and log to.')
     parser.add_argument('--resume',       default=None, help='Filename to load model and log from.')
     # Control meta parameters
     parser.add_argument('--seed',         default=42, type=int, help='Initialize the random seed of the run (for reproducibility).')

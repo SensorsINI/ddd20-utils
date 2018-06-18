@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 '''
 Author: J. Binas <jbinas@gmail.com>, 2017
@@ -52,7 +52,7 @@ export_data = export_data_vi.union(export_data_dvs)
 
 def filter_frame(d):
     '''
-    receives 8 bit frame,
+    receives 16 bit frame,
     needs to return unsigned 8 bit img
     '''
     # add custom filters here...
@@ -78,7 +78,7 @@ def get_progress_bar():
 def raster_evts(data):
     _histrange = [(0, v) for v in DVS_SHAPE]
     pol_on = data[:,3] == 1
-    pol_off = pol_on == False
+    pol_off = np.logical_not(pol_on)
     img_on, _, _ = np.histogram2d(
             data[pol_on, 2], data[pol_on, 1],
             bins=DVS_SHAPE, range=_histrange)
@@ -95,8 +95,8 @@ if __name__ == '__main__':
     parser.add_argument('--tstop', type=int)
     parser.add_argument('--binsize', type=float, default=0.1)
     parser.add_argument('--update_prog_every', type=float, default=0.01)
-    parser.add_argument('--keep_frames', type=int, default=1)
-    parser.add_argument('--keep_events', type=int, default=1)
+    parser.add_argument('--export_aps', type=int, default=1)
+    parser.add_argument('--export_dvs', type=int, default=1)
     parser.add_argument('--out_file', default='')
     args = parser.parse_args()
 
@@ -105,25 +105,28 @@ if __name__ == '__main__':
 
     fixed_dt = args.binsize > 0
     tstart = int(m.tmin + 1e6 * args.tstart)
-    tstop = m.tmin + 1e6 * args.tstop if args.tstop is not None else m.tmax
-    print(tstart, tstop)
-    m.search(tstart)
-
+    tstop = (m.tmin + 1e6 * args.tstop) if args.tstop is not None else m.tmax
+    print('start/stop timestamp', tstart, tstop)
     print('recording duration', (m.tmax - m.tmin) * 1e-6, 's')
+
+    # find start position
+    m.search(tstart)
 
     #create output file
     dtypes = {k: float for k in export_data.union({'timestamp'})}
-    if args.keep_frames:
+    if args.export_aps:
         dtypes['aps_frame'] = (np.uint8, DVS_SHAPE)
-    dtypes['dvs_frame'] = (np.int16, DVS_SHAPE)
+    if args.export_dvs:
+        dtypes['dvs_frame'] = (np.int16, DVS_SHAPE)
 
     outfile = args.out_file or args.filename[:-5] + '_export.hdf5'
-    f_out = HDF5(outfile, dtypes, mode='w', chunksize=32, compression='gzip')
+    f_out = HDF5(outfile, dtypes, mode='w', chunksize=8, compression='gzip')
 
     current_row = {k: 0 for k in dtypes}
-    if args.keep_frames:
+    if args.export_aps:
         current_row['aps_frame'] = np.zeros(DVS_SHAPE, dtype=np.uint8)
-    current_row['dvs_frame'] = np.zeros(DVS_SHAPE, dtype=np.int16)
+    if args.export_dvs:
+        current_row['dvs_frame'] = np.zeros(DVS_SHAPE, dtype=np.int16)
 
     pbar = get_progress_bar()
     sys_ts, t_pre, t_offset, ev_count, pbar_next = 0, 0, 0, 0, 0
@@ -131,49 +134,48 @@ if __name__ == '__main__':
         try:
             sys_ts, d = m.get()
         except Queue.Empty:
-            # Continue while waiting for queue to fill up
+            # wait for queue to fill up
+            time.sleep(0.01)
             continue
         if not d:
-            # Skip unused data
+            # skip unused data
             continue
         if d['etype'] == 'special_event':
             unpack_data(d)
-            if any(d['data'] == 0):
-                d['etype'] = 'timestamp_reset'
-                current_row['timestamp'] = d['timestamp']
-        if d['etype'] == 'timestamp_reset':
-            print('ts reset detected, setting offset', current_row['timestamp'])
-            t_offset += current_row['timestamp']
-            continue
+            if any(d['data'] == 0): # this is a timestamp reset
+                print('ts reset detected, setting offset', current_row['timestamp'])
+                t_offset += current_row['timestamp']
+                #NOTE the timestamp of this special event is not meaningful
+                continue
         if d['etype'] in export_data_vi:
             current_row[d['etype']] = d['data']
             continue
-        if d['etype'] == 'frame_event' and args.keep_frames:
-            if t_pre == 0:
-                print('resetting t_pre (current frame)')
-                t_pre = d['timestamp'] + t_offset
-            while fixed_dt and t_pre + args.binsize < d['timestamp'] + t_offset:
-                f_out.save(deepcopy(current_row))
-                current_row['dvs_frame'][:,:] = 0
-                current_row['timestamp'] = t_pre
-                t_pre += args.binsize
-            if not fixed_dt:
+        if t_pre == 0 and d['etype'] in ['frame_event', 'polarity_event']:
+            print('resetting t_pre (first %s)' % d['etype'])
+            t_pre = d['timestamp'] + t_offset
+        if d['etype'] == 'frame_event' and args.export_aps:
+            if fixed_dt:
+                while t_pre + args.binsize < d['timestamp'] + t_offset:
+                    # aps frame is not in current bin -> save and proceed
+                    f_out.save(deepcopy(current_row))
+                    current_row['dvs_frame'][:,:] = 0
+                    current_row['timestamp'] = t_pre
+                    t_pre += args.binsize
+            else:
                 current_row['timestamp'] = d['timestamp'] + t_offset
             current_row['aps_frame'] = filter_frame(unpack_data(d))
-            current_row['timestamp'] = t_pre
+            #current_row['timestamp'] = t_pre
+            #JB: I don't see why the previous line should make sense
             continue
-        if d['etype'] == 'polarity_event' and args.keep_events:
+        if d['etype'] == 'polarity_event' and args.export_dvs:
             unpack_data(d)
-            times = d['data'][:,0] * 1e-6 + t_offset
+            times = d['data'][:, 0] * 1e-6 + t_offset
             num_evts = d['data'].shape[0]
-            if t_pre == 0:
-                print('resetting t_pre (current pol)')
-                t_pre = times[0]
             offset = 0
             if fixed_dt:
                 # fixed time interval bin mode
-                num_samples = np.ceil((times[-1] - t_pre) / args.binsize)
-                for _ in xrange(int(num_samples)):
+                num_samples = int(np.ceil((times[-1] - t_pre) / args.binsize))
+                for _ in xrange(num_samples):
                     # take n events
                     n = (times[offset:] < t_pre + args.binsize).sum()
                     sel = slice(offset, offset + n)
@@ -210,6 +212,7 @@ if __name__ == '__main__':
     m.exit.set()
     f_out.exit.set()
     f_out.join()
+    print('[DEBUG] output done')
     while not m.done.is_set():
         print('[DEBUG] waiting for merger')
         time.sleep(1)
