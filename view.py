@@ -12,10 +12,10 @@ Usage:
  $ ./view.py <recorded_file.hdf5>
 
  Play a file, starting at X percent:
- $ ./view.py <recorded_file.hdf5> X%
+ $ ./view.py <recorded_file.hdf5> -s X%
 
  Play a file starting at second X
- $ ./view.py <recorded_file.hdf5> Xs
+ $ ./view.py <recorded_file.hdf5> -s Xs
 '''
 
 from __future__ import print_function
@@ -25,7 +25,6 @@ import numpy as np
 import h5py
 import cv2
 import time
-import sys
 import Queue
 import multiprocessing as mp
 from interfaces.caer import DVS_SHAPE, unpack_header, unpack_data
@@ -358,7 +357,11 @@ class Viewer(Interface):
                 print('decreased DVS contrast to ', self.dvs_contrast,
                       ' full scale event count')
         if self.paused:
-            return
+            while True:
+                key_paused = cv2.waitKey(1) or 0xff
+                if key_paused == ord(' '):
+                    self.paused = False
+                    break
 
         ''' receive and handle single event '''
         if 'etype' not in d:
