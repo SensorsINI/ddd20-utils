@@ -313,13 +313,43 @@ class Viewer(Interface):
         self.cache = {}
         self.font = cv2.FONT_HERSHEY_SIMPLEX
         self.display_info = True
-        self.playback_speed = 1.
+        self.playback_speed = 1. # seems to do nothing
         self.rotate180=rotate180
+        self.dvs_contrast=2 # sets contrast for full scale event count for white/black
+        self.paused=False
 
     def set_fps(self, max_fps):
         self.min_dt = 1. / max_fps
 
     def show(self, d, t=None):
+       # handle keyboad input
+        key_pressed = cv2.waitKey(1) & 0xFF # http://www.asciitable.com/
+        if key_pressed != -1:
+            if key_pressed == ord('i'): # 'i' pressed
+                self.display_info = not self.display_info
+                print('toggled car info display')
+            elif key_pressed == ord('f'): # f (faster) key pressed
+                self.min_dt=self.min_dt*1.2
+                print('increased min_dt to ',self.min_dt,' s')
+                #self.playback_speed = min(self.playback_speed + 0.2, 5.0)
+                #print('increased playback speed to ',self.playback_speed)
+            elif key_pressed == ord('s'): # s (slower) key pressed
+                self.min_dt=self.min_dt/1.2
+                print('decreased min_dt to ',self.min_dt,' s')
+                #self.playback_speed = max(self.playback_speed - 0.2, 0.2)
+                #print('decreased playback speed to ',self.playback_speed)
+            elif key_pressed == ord('b'): # brighter
+                self.dvs_contrast=max(1,self.dvs_contrast-1)
+                print('increased DVS contrast to ',self.dvs_contrast,' full scale event count')
+            elif key_pressed == ord('d'): # brighter
+                self.dvs_contrast=self.dvs_contrast+1
+                print('decreased DVS contrast to ',self.dvs_contrast,' full scale event count')
+            elif key_pressed == ord(' '): # toggle paused
+                self.paused=not self.paused
+                print('decreased DVS contrast to ',self.dvs_contrast,' full scale event count')
+        if self.paused:
+            return
+        
         ''' receive and handle single event '''
         if 'etype' not in d: #
             d['etype'] = d['name']
@@ -353,10 +383,10 @@ class Viewer(Interface):
             cv2.imshow('frame', img)
             #cv2.waitKey(1)
             self.t_pre[etype] = time.time()
-        elif etype == 'polarity_event':
+        elif etype == 'polarity_event' :
             if 'data' not in d: #
                 unpack_data(d)
-            self.pol_img[d['data'][:,2], d['data'][:,1]] = d['data'][:,3]
+            self.pol_img[d['data'][:,2], d['data'][:,1]] += (d['data'][:,3]-.5)/self.dvs_contrast # makes DVS image, but only from latest message
             if time.time() - self.t_pre[etype] > self.min_dt:
                 if self.zoom != 1:
                     self.pol_img = cv2.resize(
@@ -383,16 +413,7 @@ class Viewer(Interface):
             self.t_pre[etype] = time.time()
         if t is not None:
             self._set_t(t)
-        # handle keyboad input
-        key_pressed = cv2.waitKey(1)
-        if key_pressed != -1:
-            if key_pressed == 105: # 'i' pressed
-                self.display_info = not self.display_info
-            if key_pressed == 82: # up key pressed
-                self.playback_speed = min(self.playback_speed + 0.2, 2.0)
-            if key_pressed == 84: # down key pressed
-                self.playback_speed = max(self.playback_speed - 0.2, 0.2)
-
+  
     def _plot_steering_wheel(self, img):
         if 'steering_wheel_angle' not in self.cache:
             return
@@ -516,6 +537,14 @@ def caer_event_from_row(row):
 
 if __name__ == '__main__':
 
+    if len(sys.argv)<2:
+        print('view.py usage:')
+        print('view.py filename - play file')
+        print('view.py filename 50% - play file starting at 50%')
+        print('view.py filename 66s - play file starting at 66 seconds')
+        print('view.py -r180 filename - rotate view 180 degrees')
+        exit(0)
+        
     fname = sys.argv[1].strip()
     c = Controller(fname,)
     m = MergedStream(HDF5Stream(fname, VIEW_DATA))
@@ -524,13 +553,15 @@ if __name__ == '__main__':
     t_pre = 0
     t_offset = 0
     r180=False
+    r180arg="-r180"
+    
     print('recording duration', (m.tmax - m.tmin) * 1e-6, 's')
     # direct skip by command line
     # parse second argument
     try:
         second_opt = sys.argv[2].strip()
         n_, type_ = second_opt[:-1], second_opt[-1]
-        if second_opt == "true":
+        if second_opt == r180arg:
             r180 = True
         elif type_ == '%':
             m.search((m.tmax - m.tmin) * 1e-2 * float(n_) + m.tmin)
@@ -542,7 +573,7 @@ if __name__ == '__main__':
     try:
         third_opt = sys.argv[3].strip()
         n_, type_ = third_opt[:-1], third_opt[-1]
-        if third_opt == "true":
+        if third_opt == r180arg:
             r180 = True
         elif type_ == '%':
             m.search((m.tmax - m.tmin) * 1e-2 * float(n_) + m.tmin)
