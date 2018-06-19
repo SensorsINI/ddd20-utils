@@ -19,6 +19,8 @@ Usage:
 '''
 
 from __future__ import print_function
+import argparse
+from argparse import RawTextHelpFormatter
 import numpy as np
 import h5py
 import cv2
@@ -557,46 +559,34 @@ def caer_event_from_row(row):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter)
+    parser.add_argument('filename')
+    parser.add_argument('--start', '-s', type=str, default=0.,
+                        help="Examples:\n"
+                             "-s 50%% - play file starting at 50%%\n"
+                             "-s 66s - play file starting at 66s")
+    parser.add_argument('--rotate', '-r', type=bool, default=False,
+                        help="Rotate the scene 180 degrees if True, "
+                             "Otherwise False")
+    args = parser.parse_args()
 
-    if len(sys.argv) < 2:
-        print('view.py usage:')
-        print('view.py filename - play file')
-        print('view.py filename 50% - play file starting at 50%')
-        print('view.py filename 66s - play file starting at 66 seconds')
-        print('view.py -r180 filename - rotate view 180 degrees')
-        exit(0)
-
-    fname = sys.argv[1].strip()
+    fname = args.filename
     c = Controller(fname,)
     m = MergedStream(HDF5Stream(fname, VIEW_DATA))
     c._search_callback = m.search
     t = time.time()
     t_pre = 0
     t_offset = 0
-    r180 = False
-    r180arg = "-r180"
+    r180 = args.rotate
+    #  r180arg = "-r180"
 
     print('recording duration', (m.tmax - m.tmin) * 1e-6, 's')
     # direct skip by command line
     # parse second argument
     try:
-        second_opt = sys.argv[2].strip()
+        second_opt = args.start
         n_, type_ = second_opt[:-1], second_opt[-1]
-        if second_opt == r180arg:
-            r180 = True
-        elif type_ == '%':
-            m.search((m.tmax - m.tmin) * 1e-2 * float(n_) + m.tmin)
-        elif type_ == 's':
-            m.search(float(n_) * 1e6 + m.tmin)
-    except:
-        pass
-    # parse third argument
-    try:
-        third_opt = sys.argv[3].strip()
-        n_, type_ = third_opt[:-1], third_opt[-1]
-        if third_opt == r180arg:
-            r180 = True
-        elif type_ == '%':
+        if type_ == '%':
             m.search((m.tmax - m.tmin) * 1e-2 * float(n_) + m.tmin)
         elif type_ == 's':
             m.search(float(n_) * 1e6 + m.tmin)
