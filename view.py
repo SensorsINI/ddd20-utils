@@ -318,6 +318,7 @@ class Viewer(Interface):
         self.cache = {}
         self.font = cv2.FONT_HERSHEY_SIMPLEX
         self.display_info = True
+        self.display_color=0
         self.playback_speed = 1.  # seems to do nothing
         self.rotate180 = rotate180
         # sets contrast for full scale event count for white/black
@@ -332,8 +333,15 @@ class Viewer(Interface):
         key_pressed = cv2.waitKey(1) & 0xFF  # http://www.asciitable.com/
         if key_pressed != -1:
             if key_pressed == ord('i'):  # 'i' pressed
-                self.display_info = not self.display_info
-                print('toggled car info display')
+                if self.display_color==0:
+                    self.display_color=255
+                elif self.display_color==255:
+                    self.display_color=0
+                    self.display_info = not self.display_info
+                print('rotated car info display')
+            elif key_pressed == ord('x'):  # exit
+                print('exiting from x key')
+                raise SystemExit
             elif key_pressed == ord('f'):  # f (faster) key pressed
                 self.min_dt = self.min_dt*1.2
                 print('increased min_dt to ', self.min_dt, ' s')
@@ -443,15 +451,15 @@ class Viewer(Interface):
         if self.rotate180:
             a_rad = np.pi-a_rad
         t = (c[0] + int(np.cos(a_rad) * r), c[1] - int(np.sin(a_rad) * r))
-        cv2.line(img, c, t, 127, 2, CV_AA)
-        cv2.circle(img, c, r, 255, 1, CV_AA)
-        cv2.line(img, (c[0]-r+5, c[1]), (c[0]-r, c[1]), 255, 1, CV_AA)
-        cv2.line(img, (c[0]+r-5, c[1]), (c[0]+r, c[1]), 255, 1, CV_AA)
-        cv2.line(img, (c[0], c[1]-r+5), (c[0], c[1]-r), 255, 1, CV_AA)
-        cv2.line(img, (c[0], c[1]+r-5), (c[0], c[1]+r), 255, 1, CV_AA)
+        cv2.line(img, c, t, self.display_color, 2, CV_AA)
+        cv2.circle(img, c, r, self.display_color, 1, CV_AA)
+        cv2.line(img, (c[0]-r+5, c[1]), (c[0]-r, c[1]), self.display_color, 1, CV_AA)
+        cv2.line(img, (c[0]+r-5, c[1]), (c[0]+r, c[1]), self.display_color, 1, CV_AA)
+        cv2.line(img, (c[0], c[1]-r+5), (c[0], c[1]-r), self.display_color, 1, CV_AA)
+        cv2.line(img, (c[0], c[1]+r-5), (c[0], c[1]+r), self.display_color, 1, CV_AA)
         cv2.putText(
             img, '%0.1f deg' % a,
-            (c[0]-35, c[1]+30), self.font, 0.4, 255, 1, CV_AA)
+            (c[0]-35, c[1]+30), self.font, 0.4, self.display_color, 1, CV_AA)
 
     def _print(self, img, pos, name, unit, autohide=False):
         if name not in self.cache:
@@ -461,7 +469,7 @@ class Viewer(Interface):
             return
         cv2.putText(
             img, '%d %s' % (v, unit),
-            (pos[0]-40, pos[1]+20), self.font, 0.4, 255, 1, CV_AA)
+            (pos[0]-40, pos[1]+20), self.font, 0.4, self.display_color, 1, CV_AA)
 
     def _plot_timeline(self, img):
         pos = (50, 10)
@@ -626,6 +634,7 @@ if __name__ == '__main__':
         time.sleep(t_sleep)
         v.show(d, sys_ts)
         if time.time() - t > 1:
+            print(chr(27) + "[2J")
             t = time.time()
             print('fps:\n', '\n'.join(
                 ['  %s %s' % (
