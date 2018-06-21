@@ -430,9 +430,12 @@ class Viewer(Interface):
                         # rotate the image by 180 degrees
                         M = cv2.getRotationMatrix2D(center, 180, 1.0)
                         self.pol_img = cv2.warpAffine(self.pol_img, M, (w, h))
+                        if self.display_info:
+                            self._print_string(self.pol_img, (25, 25), "%.2fms"%(self.min_dt*1000))
                 cv2.imshow('polarity', self.pol_img)
                 # cv2.waitKey(1)
                 self.pol_img = 0.5 * np.ones(DVS_SHAPE)
+                
                 self.t_pre[etype] = time.time()
         elif etype in VIEW_DATA:
             if 'data' not in d:
@@ -471,13 +474,18 @@ class Viewer(Interface):
             img, '%d %s' % (v, unit),
             (pos[0]-40, pos[1]+20), self.font, 0.4, self.display_color, 1, CV_AA)
 
+    def _print_string(self, img, pos, string):
+         cv2.putText(
+            img, '%s' % string,
+            (pos[0], pos[1]), self.font, 0.4, self.display_color, 1, CV_AA)
+
     def _plot_timeline(self, img):
         pos = (50, 10)
         p = int(346 * self.t_now / (self.tmax - self.tmin))
         cv2.line(img, (0, 2), (p, 2), 255, 1, CV_AA)
         cv2.putText(
             img, '%d s' % self.t_now,
-            (pos[0]-40, pos[1]+20), self.font, 0.4, 255, 1, CV_AA)
+            (pos[0]-40, pos[1]+20), self.font, 0.4, self.display_color, 1, CV_AA)
 
     def close(self):
         cv2.destroyAllWindows()
