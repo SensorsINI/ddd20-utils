@@ -1,9 +1,9 @@
 
 Software released as part of the publication
 
-* Hu, Y., Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2018).  "DDD20 End-to-End Event Camera Driving Dataset: Fusing Frames andEvents with Deep Learning for Improved Steering Prediction". Submitted to Special session Beyond Traditional Sensing for Intelligent Transportation, The 23rd IEEE International Conference on Intelligent Transportation Systems, September 20 – 23, 2020, Rhodes, Greece
+* Hu, Y., Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2018).  "**DDD20 End-to-End Event Camera Driving Dataset: Fusing Frames andEvents with Deep Learning for Improved Steering Prediction**". Submitted to Special session _Beyond Traditional Sensing for Intelligent Transportation, The 23rd IEEE International Conference on Intelligent Transportation Systems_, September 20 – 23, 2020, Rhodes, Greece
 
- * Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2017). DDD17: End-To-End DAVIS Driving Dataset. in ICML’17 Workshop on Machine Learning for Autonomous Vehicles (MLAV 2017) (Sydney, Australia).  Available at: arXiv:1711.01458 [cs]  http://arxiv.org/abs/1711.01458 
+ * Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2017). DDD17: **End-To-End DAVIS Driving Dataset**. in _ICML’17 Workshop on Machine Learning for Autonomous Vehicles (MLAV 2017)_, Sydney, Australia.  Available at: arXiv:1711.01458 [cs]  http://arxiv.org/abs/1711.01458 
 
 See https://sites.google.com/view/davis-driving-dataset-2020/home for details.
 
