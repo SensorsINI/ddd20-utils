@@ -13,7 +13,7 @@ import time
 import numpy as np
 import socket, struct
 import multiprocessing as mp
-import Queue
+import queue
 
 HOST = "127.0.0.1"
 PORT = 7777
@@ -44,7 +44,7 @@ EVENT_TYPES = {
         'imu9_event': 4,
         }
 
-etype_by_id = {v: k for k,v in EVENT_TYPES.iteritems()}
+etype_by_id = {v: k for k,v in EVENT_TYPES.items()}
 
 
 def unpack_events(p):
@@ -128,7 +128,7 @@ class Monitor(mp.Process):
         hdata = self.sock.recv(20, socket.MSG_WAITALL)  # header of aer stream
         self.hdata = struct.unpack('llbbh', hdata)
         print('opened connection:', self.hdata)
-        self.q = mp.Queue(bufsize)
+        self.q = mp.queue(bufsize)
         self.maxsize = self.q._maxsize
         self.qsize = 0
         self.exit = mp.Event()
@@ -197,9 +197,9 @@ class Controller(object):
         try:
             self.s_commands = socket.socket()
             self.s_commands.connect((HOST, PORT_CTL))
-        except socket.error, msg:
-            print('Failed to create socket %s' % msg)
-            sys.exit()
+        except socket.error as msg:
+            print('Failed to create socket ' + str(msg))
+            quit()
 
     def parse_command(self, command):
         '''

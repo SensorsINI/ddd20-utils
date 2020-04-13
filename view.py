@@ -20,12 +20,13 @@ Usage:
 
 from __future__ import print_function
 import argparse
+import ctypes
 from argparse import RawTextHelpFormatter
 import numpy as np
 import h5py
 import cv2
 import time
-import Queue
+import queue
 import multiprocessing as mp
 from interfaces.caer import DVS_SHAPE, unpack_header, unpack_data
 from datasets import CHUNK_SIZE
@@ -50,7 +51,7 @@ def _flush_q(q):
     while True:
         try:
             q.get(timeout=1e-3)
-        except Queue.Empty:
+        except queue.Empty:
             if q.empty():
                 break
 
@@ -113,7 +114,7 @@ class HDF5Stream(mp.Process):
                      for k, v in self.block_offset.items()}
         self.blocks = {k: v / CHUNK_SIZE for k, v in self.size.items()}
         self.blocks_rem = {
-            k: mp.Value('L', v) for k, v in self.blocks.items() if v}
+            k: mp.Value(ctypes.c_double, v) for k, v in self.blocks.items() if v}
 
     def _init_time(self):
         self.ts_start = {}

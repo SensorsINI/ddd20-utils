@@ -1,0 +1,5 @@
+argparse~=1.4.0
+numpy~=1.18.2
+h5py~=2.10.0
+opencv-python~=4.2.0.34
+openxc~=2.0.0

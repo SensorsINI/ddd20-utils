@@ -4,7 +4,7 @@ import h5py
 import numpy as np
 import time
 import multiprocessing as mp
-import Queue
+import queue
 
 SIZE_INC = 2048
 CHUNK_SIZE = 128

@@ -1,24 +1,35 @@
-
-Software released as part of the publication
-
-* Hu, Y., Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2018).  "**DDD20 End-to-End Event Camera Driving Dataset: Fusing Frames andEvents with Deep Learning for Improved Steering Prediction**". Submitted to Special session _Beyond Traditional Sensing for Intelligent Transportation, The 23rd IEEE International Conference on Intelligent Transportation Systems_, September 20 – 23, 2020, Rhodes, Greece
-
- * Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2017). DDD17: **End-To-End DAVIS Driving Dataset**. in _ICML’17 Workshop on Machine Learning for Autonomous Vehicles (MLAV 2017)_, Sydney, Australia.  Available at: arXiv:1711.01458 [cs]  http://arxiv.org/abs/1711.01458 
+# DDD20 End-to-End Event Camera Driving Dataset
 
 See https://sites.google.com/view/davis-driving-dataset-2020/home for details.
 
-Note: the software has been tested with python 2.7, support for newer versions will follow.
+Software released as part of the publication
+
+* Hu, Y., Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2018).  "**DDD20 End-to-End Event Camera Driving Dataset: Fusing Frames and Events with Deep Learning for Improved Steering Prediction**". Submitted to Special session _Beyond Traditional Sensing for Intelligent Transportation, The 23rd IEEE International Conference on Intelligent Transportation Systems_, September 20 – 23, 2020, Rhodes, Greece
+
+ * Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2017). DDD17: **End-To-End DAVIS Driving Dataset**. in _ICML’17 Workshop on Machine Learning for Autonomous Vehicles (MLAV 2017)_, Sydney, Australia.  Available at: arXiv:1711.01458 [cs]  http://arxiv.org/abs/1711.01458 
+
 
 
 # Prerequisites
 
+Note: Tested with python 3.7, 
+
+If using conda, install pip to your conda environment first.
+
 These tools require
  * openCV (pip install opencv-python),
+ * openxc (pip install openxc)
  * h5py (pip install h5py).
+
+Or (inside your python 3.7 environment)
+```bash
+pip install openxc opencv-python h5py
+```
 
 
 # Usage:
 
+See https://sites.google.com/view/davis-driving-dataset-2020/home for details
 ## viewing
 
 ### Play a file from the beginning

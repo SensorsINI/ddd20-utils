@@ -20,7 +20,7 @@ import numpy as np
 import interfaces, datasets
 from reporting import Stats
 from view import Viewer, unpack_data
-import Queue
+import queue
 
 
 BUFSIZE_DS = 32384
@@ -41,7 +41,7 @@ dtypes_vi = {
         'fuel_level': float,
         'headlamp_status': bool,
         'high_beam_status': bool,
-        'ignition_status': datasets.h5py.special_dtype(vlen=unicode),
+        'ignition_status': datasets.h5py.special_dtype(vlen=np.unicode),
         'lateral_acceleration': float,
         'latitude': float,
         'longitude': float,
@@ -50,8 +50,8 @@ dtypes_vi = {
         'parking_brake_status': bool,
         'steering_wheel_angle': float,
         'torque_at_transmission': float,
-        'transmission_gear_position': datasets.h5py.special_dtype(vlen=unicode),
-        'gear_lever_position': datasets.h5py.special_dtype(vlen=unicode),
+        'transmission_gear_position': datasets.h5py.special_dtype(vlen=np.unicode),
+        'gear_lever_position': datasets.h5py.special_dtype(vlen=np.unicode),
         #'turn_signal_status': datasets.h5py.special_dtype(vlen=unicode),
         'vehicle_speed': float,
         'windshield_wiper_status': bool,
@@ -208,14 +208,14 @@ if __name__ == '__main__':
                   viewer.show(res)
             stats.report()
         except KeyboardInterrupt:
-            print '\ninterrupt, exiting...'
+            print('\ninterrupt, exiting...')
             dataset.exit.set()
             viewer.close()
-        except Queue.Full:
+        except queue.Full:
             print('queue full, ignoring')
             pass
 
-    print '\nexiting...'
+    print('\nexiting...')
     dataset.exit.set()
     aer.exit.set()
     vi.exit.set()
