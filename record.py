@@ -15,11 +15,11 @@ Usage:
  $ ./record.py <recording_file.hdf5>
 '''
 
-import time, sys, os, signal, thread
+import time, sys, os, thread
 import numpy as np
 import interfaces, datasets
 from reporting import Stats
-from view import Viewer, unpack_data
+from view import Viewer
 import queue
 
 
