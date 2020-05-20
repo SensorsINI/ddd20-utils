@@ -10,22 +10,40 @@ Software released as part of the publication
 
 
 
-# Prerequisites
+<!-- # Prerequisites -->
 
-Note: Tested with python 3.7.
+<!-- Note: Tested with python 3.7. -->
+<!--  -->
+<!-- If using conda, install pip to your conda environment first. -->
+<!--  -->
+<!-- These tools require -->
+<!--  * openCV (pip install opencv-python), -->
+<!--  * openxc (pip install openxc) -->
+<!--  * h5py (pip install h5py). -->
+<!--  -->
+<!-- Or (inside your python 3.7 environment) -->
+<!-- ```bash -->
+<!-- pip install openxc opencv-python h5py -->
+<!-- ``` -->
 
-If using conda, install pip to your conda environment first.
+# Installation instructions using conda and Python 2.7
 
-These tools require
- * openCV (pip install opencv-python),
- * openxc (pip install openxc)
- * h5py (pip install h5py).
+This project was designed to work with Python 2.7
 
-Or (inside your python 3.7 environment)
-```bash
-pip install openxc opencv-python h5py
-```
+1. First, create an Python 2.7 environment
 
+    ```bash
+    conda create -n ddd20 python=2.7
+    ```
+
+2. Install all dependencies:
+
+    ```bash
+    pip install future
+    pip install numpy h5py opencv-python-headless openxc==0.15.0
+    ```
+
+3. There is no step 3, have fun! :tada:
 
 # Usage:
 
