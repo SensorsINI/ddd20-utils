@@ -50,23 +50,33 @@ This project was designed to work with Python 2.7
 See https://sites.google.com/view/davis-driving-dataset-2020/home for details
 ## viewing
 
-### Play a file from the beginning
-$ python view.py <recorded_file.hdf5>
+- Play a file from the beginning
 
-### Play a file, starting at X percent
-$ python view.py <recorded_file.hdf5> X%
+    ```bash
+    $ python view.py <recorded_file.hdf5>
+    ```
 
-### Play a file starting at second X
-$ python view.py <recorded_file.hdf5> Xs
+- Play a file, starting at X percent
 
+    ```bash
+    $ python view.py <recorded_file.hdf5> X%
+    ```
+
+- Play a file starting at second X
+
+    ```bash
+    $ python view.py <recorded_file.hdf5> Xs
+    ```
 
 ## Exporting to frame-based representation
 
+```bash
 $ python export.py [-h] [--tstart TSTART] [--tstop TSTOP] [--binsize BINSIZE]
                  [--update_prog_every UPDATE_PROG_EVERY]
                  [--export_aps EXPORT_APS] [--export_dvs EXPORT_DVS]
                  [--out_file OUT_FILE]
                  filename
+```
 
 
 # License
