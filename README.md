@@ -68,6 +68,28 @@ See https://sites.google.com/view/davis-driving-dataset-2020/home for details
     $ python view.py <recorded_file.hdf5> Xs
     ```
 
+## Exporting raw data into standard data types
+
+The DDD20 recordings are recorded using a custom data structure in HDF5.
+This design choice made the batch processing restricted without reformatting/exporting.
+
+We prepared a script that can convert the original HDF5 recording into a
+nicer data strcture that user can directly work on.
+
+```bash
+$ python export_ddd20_hdf.py [-h] [--rotate ROTATE] filename
+```
+
+The newly exported file is an HDF5 file that is called `filename.exported.hdf5`.
+This file is saved at the same folder of the `filename`.
+This HDF5 file has a very simple structure, it has three datasets:
+
+```
+event: (N events x 4)  # each row is an event.
+frame: (M frames x 260 x 346)
+frame_ts: (M frames x 1)
+```
+
 ## Exporting to frame-based representation
 
 ```bash
