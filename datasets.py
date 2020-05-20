@@ -6,8 +6,8 @@ import time
 import multiprocessing as mp
 import queue
 
-SIZE_INC = 2048
-CHUNK_SIZE = 128
+SIZE_INC = int(2048)
+CHUNK_SIZE = int(128)
 
 
 class HDF5(mp.Process):
