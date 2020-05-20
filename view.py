@@ -26,8 +26,9 @@ import numpy as np
 import h5py
 import cv2
 import time
-import queue
 import multiprocessing as mp
+import queue
+from queue import Empty
 from interfaces.caer import DVS_SHAPE, unpack_header, unpack_data
 from datasets import CHUNK_SIZE
 
@@ -79,7 +80,7 @@ class HDF5Stream(mp.Process):
                     time.sleep(1e-6)
                     continue
                 i = self.block_offset[k]
-                self.q[k].put(self.f[k]['data'][i*CHUNK_SIZE:(i+1)*CHUNK_SIZE])
+                self.q[k].put(self.f[k]['data'][int(i*CHUNK_SIZE):int((i+1)*CHUNK_SIZE)])
                 self.block_offset[k] += 1
                 if self.blocks_rem[k].value:
                     self.blocks_rem[k].value -= 1
@@ -388,7 +389,7 @@ class Viewer(Interface):
                 # grab the dimensions of the image and calculate the center
                 # of the image
                 (h, w) = img.shape[:2]
-                center = (w / 2, h / 2)
+                center = (w // 2, h // 2)
 
                 # rotate the image by 180 degrees
                 M = cv2.getRotationMatrix2D(center, 180, 1.0)
@@ -426,7 +427,7 @@ class Viewer(Interface):
                         # calculate the center
                         # of the image
                         (h, w) = self.pol_img.shape[:2]
-                        center = (w / 2, h / 2)
+                        center = (w // 2, h // 2)
 
                         # rotate the image by 180 degrees
                         M = cv2.getRotationMatrix2D(center, 180, 1.0)
@@ -624,7 +625,8 @@ if __name__ == '__main__':
     while m.has_data:
         try:
             sys_ts, d = m.get()
-        except Queue.Empty:
+        #  except Queue.Empty:
+        except Empty:
             continue
         if not d:
             continue

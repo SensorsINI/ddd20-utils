@@ -55,7 +55,7 @@ def unpack_events(p):
     if not p['etype'] == 'polarity_event':
         return False
     p_arr = np.fromstring(p['dvs_data'], dtype=np.uint32)
-    p_arr = p_arr.reshape((p['ecapacity'], p['esize'] / 4))
+    p_arr = p_arr.reshape((int(p['ecapacity']), int(p['esize'] / 4)))
     data, ts = p_arr[:,0], p_arr[:,1]
     pol = data >> 1 & 0b1
     y = data >> 2 & 0b111111111111111
@@ -89,7 +89,7 @@ def unpack_special(p):
     if not p['etype'] == 'special_event':
         return False
     p_arr = np.fromstring(p['dvs_data'], dtype=np.uint32)
-    p_arr = p_arr.reshape((p['ecapacity'], p['esize'] / 4))
+    p_arr = p_arr.reshape((int(p['ecapacity']), int(p['esize'] / 4)))
     data, ts = p_arr[:,0], p_arr[:,1]
     typeid = data & 254
     #valid = data & 1
