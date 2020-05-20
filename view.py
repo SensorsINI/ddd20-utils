@@ -389,7 +389,7 @@ class Viewer(Interface):
                 # grab the dimensions of the image and calculate the center
                 # of the image
                 (h, w) = img.shape[:2]
-                center = (w / 2, h / 2)
+                center = (w // 2, h // 2)
 
                 # rotate the image by 180 degrees
                 M = cv2.getRotationMatrix2D(center, 180, 1.0)
@@ -427,7 +427,7 @@ class Viewer(Interface):
                         # calculate the center
                         # of the image
                         (h, w) = self.pol_img.shape[:2]
-                        center = (w / 2, h / 2)
+                        center = (w // 2, h // 2)
 
                         # rotate the image by 180 degrees
                         M = cv2.getRotationMatrix2D(center, 180, 1.0)
