@@ -28,7 +28,7 @@ Software released as part of the publication
 
 # Installation instructions using conda and Python 2.7
 
-This project was designed to work with Python 2.7
+This project currently works with Python 2.7 under linux.
 
 1. First, create an Python 2.7 environment
 
