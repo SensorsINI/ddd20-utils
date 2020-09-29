@@ -75,7 +75,7 @@ class HDF5Stream(mp.Process):
     def run(self):
         while self.blocks_rem and not self.exit.is_set():
             blocks_read = 0
-            for k in self.blocks_rem.keys():
+            for k in list(self.blocks_rem):
                 if self.q[k].full():
                     time.sleep(1e-6)
                     continue
