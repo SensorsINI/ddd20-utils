@@ -159,7 +159,7 @@ if __name__ == '__main__':
                 while t_pre + args.binsize < d['timestamp'] + t_offset:
                     # aps frame is not in current bin -> save and proceed
                     f_out.save(deepcopy(current_row))
-                    current_row['dvs_frame'][:,:] = 0
+                    current_row['dvs_frame'] = 0
                     current_row['timestamp'] = t_pre
                     t_pre += args.binsize
             else:
@@ -192,7 +192,7 @@ if __name__ == '__main__':
             else:
                 # fixed event count mode
                 num_samples = np.ceil(-float(num_evts + ev_count)/args.binsize)
-                for _ in xrange(int(num_samples)):
+                for _ in range(int(num_samples)):
                     n = min(int(-args.binsize - ev_count), num_evts - offset)
                     sel = slice(offset, offset + n)
                     current_row['dvs_frame'] += raster_evts(d['data'][sel])
