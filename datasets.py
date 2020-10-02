@@ -4,7 +4,8 @@ import h5py
 import numpy as np
 import time
 import multiprocessing as mp
-import queue
+from multiprocessing import Queue
+from queue import Empty
 
 SIZE_INC = int(2048)
 CHUNK_SIZE = int(128)
@@ -39,12 +40,12 @@ class HDF5(mp.Process):
 
     def run(self):
         self.init_ds()
-        f = file('datasets_ioerrors.txt', 'a')
+        f = open('datasets_ioerrors.txt', 'a')
         while not self.exit.is_set() or not self.q.empty():
             try:
                 res = self.q.get(False, 1e-3)
                 self._save(res)
-            except Queue.Empty:
+            except Empty:
                 pass
             except IOError:
                 print('IOError, continuing')
@@ -57,7 +58,7 @@ class HDF5(mp.Process):
         self.close()
 
     def create_datasets(self, tables, compression=None):
-        for tname, ttype in tables.iteritems():
+        for tname, ttype in tables.items():
             tname_split = tname.split('/')
             if len(tname_split) > 1:
                 grpname, subtname = tname_split
@@ -92,7 +93,7 @@ class HDF5(mp.Process):
             raise Queue.Full('dataset buffer overflow')
 
     def _save(self, data):
-        for col,val in data.iteritems():
+        for col,val in data.items():
             self.outbuffers[col].append(val)
             if len(self.outbuffers[col]) == self.chunk_size:
                 self[col][self.ptrs[col]:self.ptrs[col] + self.chunk_size] = \

@@ -1,6 +1,6 @@
 import os
 import lasagne
-import cPickle as pickle
+import _pickle as pickle
 import numpy as np
 import theano.tensor as T
 # Create 5D tensor type
@@ -19,12 +19,12 @@ def save_model(filename, suffix, model, log=None, announce=True, log_only=False)
     if not log_only:
         # Acquire Data
         data = lasagne.layers.get_all_param_values(model)
-        with open(param_filename, 'w') as f:
+        with open(param_filename, 'wb') as f:
             pickle.dump(data, f)
     # Generate log filename and dump
     if log is not None:
         log_filename = '%s.log' % (filename)
-        with open(log_filename, 'w') as f:
+        with open(log_filename, 'wb') as f:
             pickle.dump(log, f)
 
 def load_model(filename, model):

@@ -1,6 +1,7 @@
 import h5py
 import numpy as np
-from scipy.misc import imresize
+#from scipy.misc import imresize
+from skimage.transform import resize
 from collections import defaultdict
 
 def get_real_endpoint(h5f):
@@ -15,7 +16,7 @@ def chunker(seq, size):
     return (seq[pos:pos + size] for pos in xrange(0, len(seq), size))
 
 def yield_chunker(seq, size):
-    for pos in xrange(0, len(seq), size):
+    for pos in range(0, len(seq), size):
         yield seq[pos:pos + size]
 
 def check_and_fix_timestamps(h5f):
@@ -237,11 +238,13 @@ class MultiHDF5VisualIterator(object):
             b += 1
 
 def resize_int8(frame, size):
-    return imresize(frame, size)
+    #return imresize(frame, size)
+    return resize(frame, size)
 
 def resize_int16(frame, size=(60,80), method='bilinear', climit=[-15,15]):
     # Assumes data is some small amount around the mean, i.e., DVS event sums
-    return imresize((np.clip(frame, climit[0], climit[1]).astype('float32')+127), size, interp=method).astype('uint8')
+    #return imresize((np.clip(frame, climit[0], climit[1]).astype('float32')+127), size, interp=method).astype('uint8')
+    return resize((np.clip(frame, climit[0], climit[1]).astype('float32')+127), size).astype('uint8')
 
 def resize_data_into_new_key(h5f, key, new_key, new_size, chunk_size=1024):
     chunk_generator = yield_chunker(h5f[key], chunk_size)
@@ -255,7 +258,7 @@ def resize_data_into_new_key(h5f, key, new_key, new_size, chunk_size=1024):
     elif key == 'dvs_frame':
         do_resize = resize_int16
     else:
-        raise AssertionError, 'Unknown data type'
+        raise AssertionError('Unknown data type')
     # Initialize a resizable dataset to hold the output
     resized_shape = (chunk_size,) + new_size
     max_shape = (h5f[key].shape[0],) + resized_shape[1:]

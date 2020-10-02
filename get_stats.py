@@ -30,7 +30,7 @@ if __name__ == '__main__':
         data = f[k]['data'][nnz, :]
         t, v = data[:, 0] * 1e-6, data[:, 1]
         curve = ip.interp1d(t, v)
-        tnew = np.linspace(t[0], t[-1], (t[-1] - t[0]) / tstep)
+        tnew = np.linspace(t[0], t[-1], int((t[-1] - t[0]) / tstep))
         vout.append(curve(tnew))
 
     out = np.hstack(vout)
