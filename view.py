@@ -591,7 +591,7 @@ if __name__ == '__main__':
                         help="Examples:\n"
                              "-s 50%% - play file starting at 50%%\n"
                              "-s 66s - play file starting at 66s")
-    parser.add_argument('--rotate', '-r', type=bool, default=False,
+    parser.add_argument('--rotate', '-r', type=bool, default=True,
                         help="Rotate the scene 180 degrees if True, "
                              "Otherwise False")
     args = parser.parse_args()
