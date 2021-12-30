@@ -29,6 +29,7 @@ from interfaces.caer import DVS_SHAPE, unpack_header, unpack_data
 
 CHUNK_SIZE = 128
 
+DISPLAY = True # whether to turn on display. setting DISPLAY=False makes our lives easier in headless servers
 
 #  exported_h5_path = os.path.join(
 #      os.environ["HOME"], "data", "DDD19", "exported.h5")
@@ -539,8 +540,11 @@ class Viewer(Interface):
 class Controller(Interface):
     def __init__(self, filename, **kwargs):
         super(Controller, self).__init__(**kwargs)
-        cv2.namedWindow('control')
-        cv2.moveWindow('control', 400, 698)
+        global DISPLAY
+        self.display = DISPLAY
+        if self.display:
+            cv2.namedWindow('control')
+            cv2.moveWindow('control', 400, 698)
         self.f = h5py.File(filename, 'r')
         self.tmin, self.tmax = self._get_ts()
         self.len = int(self.tmax - self.tmin) + 1
@@ -551,7 +555,8 @@ class Controller(Interface):
         self.width = 978
         self.img = cv2.resize(
             img, (self.width, 100), interpolation=cv2.INTER_NEAREST)
-        cv2.setMouseCallback('control', self._set_search)
+        if self.display:
+            cv2.setMouseCallback('control', self._set_search)
         self.t_pre = 0
         self.update(0)
         self.f.close()
@@ -564,8 +569,9 @@ class Controller(Interface):
         self.t_pre = t
         img = self.img.copy()
         img[:, :t+1] = img[:, :t+1] * 0.5 + 0.5
-        cv2.imshow('control', img)
-        cv2.waitKey(1)
+        if self.display:
+            cv2.imshow('control', img)
+            cv2.waitKey(1)
 
     def plot_line(self, img, name, offset, height):
         x, y = self.get_xy(name)
@@ -628,9 +634,12 @@ if __name__ == '__main__':
     parser.add_argument('--rotate', '-r', type=bool, default=False,
                         help="Rotate the scene 180 degrees if True, "
                              "Otherwise False")
+    parser.add_argument('--display', type=int, default=1,
+                        help="whether to display data on the screen")
     args = parser.parse_args()
 
     fname = args.filename
+    DISPLAY = args.display
 
     # exported file
     file_abs_path = os.path.abspath(fname)
@@ -675,8 +684,9 @@ if __name__ == '__main__':
             m.search(float(n_) * 1e6 + m.tmin)
     except:
         pass
-    v = Viewer(tmin=m.tmin * 1e-6, tmax=m.tmax * 1e-6,
-               zoom=1.41, rotate180=r180, update_callback=c.update)
+    if DISPLAY:
+        v = Viewer(tmin=m.tmin * 1e-6, tmax=m.tmax * 1e-6, 
+                    zoom=1.41, rotate180=r180, update_callback=c.update)
     # run main loop
     ts_reset = False
     while m.has_data:
@@ -690,7 +700,8 @@ if __name__ == '__main__':
             ts_reset = True
             continue
         if not d['etype'] in {'frame_event', 'polarity_event'}:
-            v.show(d)
+            if DISPLAY:
+                v.show(d)
             continue
         if d['timestamp'] < t_pre:
             print('[WARN] negative dt detected!')
@@ -704,7 +715,8 @@ if __name__ == '__main__':
             print('setting offset', t_offset)
         t_sleep = max(d['timestamp'] - time.time() + t_offset, 0)
         time.sleep(t_sleep)
-        v.show(d, sys_ts)
+        if DISPLAY:
+            v.show(d, sys_ts)
         #  if time.time() - t > 1:
         #      print(chr(27) + "[2J")
         #      t = time.time()
