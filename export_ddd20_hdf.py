@@ -29,6 +29,7 @@ from interfaces.caer import DVS_SHAPE, unpack_header, unpack_data
 
 CHUNK_SIZE = 128
 
+DISPLAY = True # whether to turn on display. setting DISPLAY=False makes our lives easier in headless servers
 
 #  exported_h5_path = os.path.join(
 #      os.environ["HOME"], "data", "DDD19", "exported.h5")
@@ -319,16 +320,17 @@ class Viewer(Interface):
     def __init__(self, max_fps=40, zoom=1, rotate180=False, **kwargs):
         super(Viewer, self).__init__(**kwargs)
         self.zoom = zoom
-        cv2.namedWindow('frame')
-        # tobi added from https://stackoverflow.com/questions/21810452/
-        # cv2-imshow-command-doesnt-work-properly-in-opencv-python/
-        # 24172409#24172409
-        cv2.startWindowThread()
-        cv2.namedWindow('polarity')
-        ox = 0
-        oy = 0
-        cv2.moveWindow('frame', ox, oy)
-        cv2.moveWindow('polarity', ox + int(448*self.zoom), oy)
+        if DISPLAY:
+            cv2.namedWindow('frame')
+            # tobi added from https://stackoverflow.com/questions/21810452/
+            # cv2-imshow-command-doesnt-work-properly-in-opencv-python/
+            # 24172409#24172409
+            cv2.startWindowThread()
+            cv2.namedWindow('polarity')
+            ox = 0
+            oy = 0
+            cv2.moveWindow('frame', ox, oy)
+            cv2.moveWindow('polarity', ox + int(448*self.zoom), oy)
         self.set_fps(max_fps)
         self.pol_img = 0.5 * np.ones(DVS_SHAPE)
         self.t_now = 0
@@ -348,47 +350,48 @@ class Viewer(Interface):
         self.min_dt = 1. / max_fps
 
     def show(self, d, t=None):
-        # handle keyboad input
-        key_pressed = cv2.waitKey(1) & 0xFF  # http://www.asciitable.com/
-        if key_pressed != -1:
-            if key_pressed == ord('i'):  # 'i' pressed
-                if self.display_color == 0:
-                    self.display_color = 255
-                elif self.display_color == 255:
-                    self.display_color = 0
-                    self.display_info = not self.display_info
-                print('rotated car info display')
-            elif key_pressed == ord('x'):  # exit
-                print('exiting from x key')
-                raise SystemExit
-            elif key_pressed == ord('f'):  # f (faster) key pressed
-                self.min_dt = self.min_dt*1.2
-                print('increased min_dt to ', self.min_dt, ' s')
-                # self.playback_speed = min(self.playback_speed + 0.2, 5.0)
-                # print('increased playback speed to ',self.playback_speed)
-            elif key_pressed == ord('s'):  # s (slower) key pressed
-                self.min_dt = self.min_dt/1.2
-                print('decreased min_dt to ', self.min_dt, ' s')
-                # self.playback_speed = max(self.playback_speed - 0.2, 0.2)
-                # print('decreased playback speed to ',self.playback_speed)
-            elif key_pressed == ord('b'):  # brighter
-                self.dvs_contrast = max(1, self.dvs_contrast-1)
-                print('increased DVS contrast to ', self.dvs_contrast,
-                      ' full scale event count')
-            elif key_pressed == ord('d'):  # brighter
-                self.dvs_contrast = self.dvs_contrast+1
-                print('decreased DVS contrast to ', self.dvs_contrast,
-                      ' full scale event count')
-            elif key_pressed == ord(' '):  # toggle paused
-                self.paused = not self.paused
-                print('decreased DVS contrast to ', self.dvs_contrast,
-                      ' full scale event count')
-        if self.paused:
-            while True:
-                key_paused = cv2.waitKey(1) or 0xff
-                if key_paused == ord(' '):
-                    self.paused = False
-                    break
+        if DISPLAY:
+            # handle keyboad input
+            key_pressed = cv2.waitKey(1) & 0xFF  # http://www.asciitable.com/
+            if key_pressed != -1:
+                if key_pressed == ord('i'):  # 'i' pressed
+                    if self.display_color == 0:
+                        self.display_color = 255
+                    elif self.display_color == 255:
+                        self.display_color = 0
+                        self.display_info = not self.display_info
+                    print('rotated car info display')
+                elif key_pressed == ord('x'):  # exit
+                    print('exiting from x key')
+                    raise SystemExit
+                elif key_pressed == ord('f'):  # f (faster) key pressed
+                    self.min_dt = self.min_dt*1.2
+                    print('increased min_dt to ', self.min_dt, ' s')
+                    # self.playback_speed = min(self.playback_speed + 0.2, 5.0)
+                    # print('increased playback speed to ',self.playback_speed)
+                elif key_pressed == ord('s'):  # s (slower) key pressed
+                    self.min_dt = self.min_dt/1.2
+                    print('decreased min_dt to ', self.min_dt, ' s')
+                    # self.playback_speed = max(self.playback_speed - 0.2, 0.2)
+                    # print('decreased playback speed to ',self.playback_speed)
+                elif key_pressed == ord('b'):  # brighter
+                    self.dvs_contrast = max(1, self.dvs_contrast-1)
+                    print('increased DVS contrast to ', self.dvs_contrast,
+                        ' full scale event count')
+                elif key_pressed == ord('d'):  # brighter
+                    self.dvs_contrast = self.dvs_contrast+1
+                    print('decreased DVS contrast to ', self.dvs_contrast,
+                        ' full scale event count')
+                elif key_pressed == ord(' '):  # toggle paused
+                    self.paused = not self.paused
+                    print('decreased DVS contrast to ', self.dvs_contrast,
+                        ' full scale event count')
+            if self.paused:
+                while True:
+                    key_paused = cv2.waitKey(1) or 0xff
+                    if key_paused == ord(' '):
+                        self.paused = False
+                        break
 
         ''' receive and handle single event '''
         if 'etype' not in d:
@@ -539,8 +542,11 @@ class Viewer(Interface):
 class Controller(Interface):
     def __init__(self, filename, **kwargs):
         super(Controller, self).__init__(**kwargs)
-        cv2.namedWindow('control')
-        cv2.moveWindow('control', 400, 698)
+        global DISPLAY
+        self.display = DISPLAY
+        if self.display:
+            cv2.namedWindow('control')
+            cv2.moveWindow('control', 400, 698)
         self.f = h5py.File(filename, 'r')
         self.tmin, self.tmax = self._get_ts()
         self.len = int(self.tmax - self.tmin) + 1
@@ -551,7 +557,8 @@ class Controller(Interface):
         self.width = 978
         self.img = cv2.resize(
             img, (self.width, 100), interpolation=cv2.INTER_NEAREST)
-        cv2.setMouseCallback('control', self._set_search)
+        if self.display:
+            cv2.setMouseCallback('control', self._set_search)
         self.t_pre = 0
         self.update(0)
         self.f.close()
@@ -564,8 +571,9 @@ class Controller(Interface):
         self.t_pre = t
         img = self.img.copy()
         img[:, :t+1] = img[:, :t+1] * 0.5 + 0.5
-        cv2.imshow('control', img)
-        cv2.waitKey(1)
+        if self.display:
+            cv2.imshow('control', img)
+            cv2.waitKey(1)
 
     def plot_line(self, img, name, offset, height):
         x, y = self.get_xy(name)
@@ -628,9 +636,12 @@ if __name__ == '__main__':
     parser.add_argument('--rotate', '-r', type=bool, default=False,
                         help="Rotate the scene 180 degrees if True, "
                              "Otherwise False")
+    parser.add_argument('--display', type=int, default=1,
+                        help="whether to display data on the screen")
     args = parser.parse_args()
 
     fname = args.filename
+    DISPLAY = args.display
 
     # exported file
     file_abs_path = os.path.abspath(fname)
@@ -675,8 +686,8 @@ if __name__ == '__main__':
             m.search(float(n_) * 1e6 + m.tmin)
     except:
         pass
-    v = Viewer(tmin=m.tmin * 1e-6, tmax=m.tmax * 1e-6,
-               zoom=1.41, rotate180=r180, update_callback=c.update)
+    v = Viewer(tmin=m.tmin * 1e-6, tmax=m.tmax * 1e-6, 
+                    zoom=1.41, rotate180=r180, update_callback=c.update)
     # run main loop
     ts_reset = False
     while m.has_data:
