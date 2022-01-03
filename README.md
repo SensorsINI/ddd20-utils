@@ -89,13 +89,16 @@ event: (N events x 4)  # each row is an event.
 frame: (M frames x 260 x 346)
 frame_ts: (M frames x 1)
 ```
-
+Added now is option to turn off the display (thanks youkaichao) so that issue #4 can be resolved by simply adding the option: 
+```
+python export_ddd20_hdf.py filename --display 0
+```
 ## Exporting to frame-based representation
 
 ```bash
 $ python export.py [-h] [--tstart TSTART] [--tstop TSTOP] [--binsize BINSIZE]
                  [--update_prog_every UPDATE_PROG_EVERY]
-                 [--export_aps EXPORT_APS] [--export_dvs EXPORT_DVS]
+                 [--export_aps EXPORT_APS] [--export_dvs EXPORT_DVS] [--display 0]
                  [--out_file OUT_FILE]
                  filename
 ```
