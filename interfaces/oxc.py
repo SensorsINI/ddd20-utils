@@ -13,7 +13,7 @@ import time, sys
 import multiprocessing as mp
 import numpy as np
 from openxc.tools import dump as oxc
-import Queue
+from multiprocessing import Queue
 
 class Monitor(mp.Process):
     def __init__(self, bufsize=256):

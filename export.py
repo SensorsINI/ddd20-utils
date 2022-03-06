@@ -10,7 +10,8 @@ GNU LESSER GENERAL PUBLIC LICENSE Version 3.
 
 from __future__ import print_function
 import os, sys, time, argparse
-import Queue
+from multiprocessing import Queue
+from queue import Empty
 import numpy as np
 import h5py
 from copy import deepcopy
@@ -133,7 +134,7 @@ if __name__ == '__main__':
     while m.has_data and sys_ts <= tstop*1e-6:
         try:
             sys_ts, d = m.get()
-        except Queue.Empty:
+        except Empty:
             # wait for queue to fill up
             time.sleep(0.01)
             continue
@@ -158,7 +159,7 @@ if __name__ == '__main__':
                 while t_pre + args.binsize < d['timestamp'] + t_offset:
                     # aps frame is not in current bin -> save and proceed
                     f_out.save(deepcopy(current_row))
-                    current_row['dvs_frame'][:,:] = 0
+                    current_row['dvs_frame'] = 0
                     current_row['timestamp'] = t_pre
                     t_pre += args.binsize
             else:
@@ -175,7 +176,7 @@ if __name__ == '__main__':
             if fixed_dt:
                 # fixed time interval bin mode
                 num_samples = int(np.ceil((times[-1] - t_pre) / args.binsize))
-                for _ in xrange(num_samples):
+                for _ in range(0, num_samples):
                     # take n events
                     n = (times[offset:] < t_pre + args.binsize).sum()
                     sel = slice(offset, offset + n)
@@ -191,7 +192,7 @@ if __name__ == '__main__':
             else:
                 # fixed event count mode
                 num_samples = np.ceil(-float(num_evts + ev_count)/args.binsize)
-                for _ in xrange(int(num_samples)):
+                for _ in range(int(num_samples)):
                     n = min(int(-args.binsize - ev_count), num_evts - offset)
                     sel = slice(offset, offset + n)
                     current_row['dvs_frame'] += raster_evts(d['data'][sel])

@@ -75,7 +75,7 @@ class HDF5Stream(mp.Process):
     def run(self):
         while self.blocks_rem and not self.exit.is_set():
             blocks_read = 0
-            for k in self.blocks_rem.keys():
+            for k in list(self.blocks_rem):
                 if self.q[k].full():
                     time.sleep(1e-6)
                     continue
@@ -591,7 +591,7 @@ if __name__ == '__main__':
                         help="Examples:\n"
                              "-s 50%% - play file starting at 50%%\n"
                              "-s 66s - play file starting at 66s")
-    parser.add_argument('--rotate', '-r', type=bool, default=False,
+    parser.add_argument('--rotate', '-r', type=bool, default=True,
                         help="Rotate the scene 180 degrees if True, "
                              "Otherwise False")
     args = parser.parse_args()
