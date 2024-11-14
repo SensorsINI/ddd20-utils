@@ -34,13 +34,14 @@ This project was designed to work with Python 2.7
 
     ```bash
     conda create -n ddd20 python=2.7
+    conda activate ddd20
     ```
 
 2. Install all dependencies:
 
     ```bash
     pip install future
-    pip install numpy h5py opencv-python-headless openxc==0.15.0
+    pip install numpy h5py opencv-python-headless==4.2.0.32 openxc==0.15.0
     ```
 
 3. There is no step 3, have fun! :tada:
