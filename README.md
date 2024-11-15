@@ -2,6 +2,8 @@
 
 See https://sites.google.com/view/davis-driving-dataset-2020/home for details.
 
+![view.py](ddd20-view.gif)
+
 Software released as part of the publication
 
  * Hu, Y., Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2020).  "DDD20 End-to-End Event Camera Driving Dataset: Fusing Frames and Events with Deep Learning for Improved Steering Prediction".  Special session Beyond Traditional Sensing for Intelligent Transportation, The 23rd IEEE International Conference on Intelligent Transportation Systems, September 20 – 23, 2020, Rhodes, Greece.   arXiv [cs.CV]. arXiv. http://arxiv.org/abs/2005.08605 
