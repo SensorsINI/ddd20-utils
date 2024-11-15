@@ -28,7 +28,7 @@ Software released as part of the publication
 
 # Installation instructions using conda and Python 2.7
 
-This project was designed to work with Python 2.7
+This project currently works with Python 2.7 under linux.
 
 1. First, create an Python 2.7 environment
 
@@ -51,23 +51,58 @@ This project was designed to work with Python 2.7
 See https://sites.google.com/view/davis-driving-dataset-2020/home for details
 ## viewing
 
-### Play a file from the beginning
-$ python view.py <recorded_file.hdf5>
+- Play a file from the beginning
 
-### Play a file, starting at X percent
-$ python view.py <recorded_file.hdf5> X%
+    ```bash
+    $ python view.py <recorded_file.hdf5>
+    ```
 
-### Play a file starting at second X
-$ python view.py <recorded_file.hdf5> Xs
+- Play a file, starting at X percent
 
+    ```bash
+    $ python view.py <recorded_file.hdf5> X%
+    ```
 
+- Play a file starting at second X
+
+    ```bash
+    $ python view.py <recorded_file.hdf5> Xs
+    ```
+
+## Exporting raw data into standard data types
+
+The DDD20 recordings are recorded using a custom data structure in HDF5.
+This design choice made the batch processing restricted without reformatting/exporting.
+
+We prepared a script that can convert the original HDF5 recording into a
+nicer data strcture that user can directly work on.
+
+```bash
+$ python export_ddd20_hdf.py [-h] [--rotate ROTATE] filename
+```
+
+The newly exported file is an HDF5 file that is called `filename.exported.hdf5`.
+This file is saved at the same folder of the `filename`.
+This HDF5 file has a very simple structure, it has three datasets:
+
+```
+event: (N events x 4)  # each row is an event.
+frame: (M frames x 260 x 346)
+frame_ts: (M frames x 1)
+```
+Added now is option to turn off the display (thanks youkaichao) so that issue #4 can be resolved by simply adding the option: 
+```
+python export_ddd20_hdf.py filename --display 0
+```
 ## Exporting to frame-based representation
 
+```bash
 $ python export.py [-h] [--tstart TSTART] [--tstop TSTOP] [--binsize BINSIZE]
                  [--update_prog_every UPDATE_PROG_EVERY]
-                 [--export_aps EXPORT_APS] [--export_dvs EXPORT_DVS]
+                 [--export_aps EXPORT_APS] [--export_dvs EXPORT_DVS] [--display 0]
                  [--out_file OUT_FILE]
                  filename
+```
 
 
 # License

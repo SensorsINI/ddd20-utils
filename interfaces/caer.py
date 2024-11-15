@@ -13,7 +13,7 @@ import time
 import numpy as np
 import socket, struct
 import multiprocessing as mp
-import queue
+import Queue
 
 HOST = "127.0.0.1"
 PORT = 7777
