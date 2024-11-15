@@ -30,7 +30,7 @@ See https://github.com/SensorsINI/ddd20-itsc20 for the code used for the Hu pape
 
 # Installation instructions using conda and Python 2.7
 
-This project currently works with Python 2.7 under linux.  
+This project currently works with Python 2.7 under linux.  Lasted tested working *view.py* November 2024.
 
 *(Don't try to run this code in python 3; it depends on some cryptic multiprocessing code that is not portable to python3! Trust us, we tried to port it.)*
 
