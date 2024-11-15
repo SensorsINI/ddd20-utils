@@ -10,7 +10,7 @@ Software released as part of the publication
 
  * Binas, J., Neil, D., Liu, S.-C., and Delbruck, T. (2017). DDD17: **End-To-End DAVIS Driving Dataset**. in _ICML’17 Workshop on Machine Learning for Autonomous Vehicles (MLAV 2017)_, Sydney, Australia.  Available at: arXiv:1711.01458 [cs]  http://arxiv.org/abs/1711.01458 
 
-
+See https://github.com/SensorsINI/ddd20-itsc20 for the code used for the Hu paper above.
 
 <!-- # Prerequisites -->
 
