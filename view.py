@@ -366,6 +366,22 @@ class Viewer(Interface):
                 self.paused = not self.paused
                 print('decreased DVS contrast to ', self.dvs_contrast,
                       ' full scale event count')
+            elif key_pressed==ord('r'):
+                self.rotate180= not self.rotate180
+                print('rotated 180 deg')
+            elif key_pressed in (ord('h'),ord('?')):
+                print("""?|h help
+                      space pause
+                      b brighter
+                      d darker
+                      s slower
+                      f faster
+                      i toggle/rotate info
+                      r rotate 180 deg
+                      x exit
+                      """)
+                time.sleep(3)
+
         if self.paused:
             while True:
                 key_paused = cv2.waitKey(1) or 0xff
@@ -652,7 +668,8 @@ if __name__ == '__main__':
         if time.time() - t > 1:
             print(chr(27) + "[2J")
             t = time.time()
-            print('fps:\n', '\n'.join(
+            print('sample rate:\n', '\n'.join(
                 ['  %s %s' % (
                  k.ljust(20), v_) for k, v_ in v.count.items()]))
             v.count = {k: 0 for k in v.count}
+            print('?|h: show help')
