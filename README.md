@@ -57,17 +57,34 @@ See https://sites.google.com/view/davis-driving-dataset-2020/home for details
     $ python view.py <recorded_file.hdf5>
     ```
 
-- Play a file, starting at X percent
-
+- Print usage
     ```bash
-    $ python view.py <recorded_file.hdf5> X%
+    $ python view.py --help
+    usage: view.py [-h] [--start START] [--rotate ROTATE] filename
+
+    positional arguments:
+    filename
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    --start START, -s START
+                            Examples:
+                            -s 50% - play file starting at 50%
+                            -s 66s - play file starting at 66s
+    --rotate ROTATE, -r ROTATE
+                            Rotate the scene 180 degrees if True, Otherwise False
     ```
 
-- Play a file starting at second X
-
-    ```bash
-    $ python view.py <recorded_file.hdf5> Xs
-    ```
+While viewing, hit ? or h for help in console:
+```
+space pause
+b brighter
+d darker
+s slower
+f faster
+i toggle/rotate info
+r rotate 180 deg
+```
 
 ## Exporting raw data into standard data types
 
