@@ -30,7 +30,9 @@ Software released as part of the publication
 
 # Installation instructions using conda and Python 2.7
 
-This project currently works with Python 2.7 under linux.
+This project currently works with Python 2.7 under linux.  
+
+*(Don't try to run this code in python 3; it depends on some cryptic multiprocessing code that is not portable to python3! Trust us, we tried to port it.)*
 
 1. First, create an Python 2.7 environment
 
@@ -94,7 +96,7 @@ The DDD20 recordings are recorded using a custom data structure in HDF5.
 This design choice made the batch processing restricted without reformatting/exporting.
 
 We prepared a script that can convert the original HDF5 recording into a
-nicer data strcture that user can directly work on.
+nicer data strcture that user can directly work on. __However, this file will not contain the car CAN bus steering/throttle/GPS, etc.__
 
 ```bash
 $ python export_ddd20_hdf.py [-h] [--rotate ROTATE] filename
