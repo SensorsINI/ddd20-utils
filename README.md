@@ -41,7 +41,7 @@ This project currently works with Python 2.7 under linux.
 
     ```bash
     pip install future
-    pip install numpy h5py opencv-python-headless==4.2.0.32 openxc==0.15.0
+    pip install numpy h5py opencv-python==4.2.0.32 openxc==0.15.0
     ```
 
 3. There is no step 3, have fun! :tada:
